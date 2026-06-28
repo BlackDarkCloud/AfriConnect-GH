@@ -2,6 +2,7 @@ const translations = {
   en: {
     "nav.services": "Services",
     "nav.destinations": "Destinations",
+    "nav.gallery": "Gallery",
     "nav.offers": "Offers",
     "nav.contact": "Contact",
     "hero.eyebrow": "Bilingual travel and settlement support",
@@ -12,6 +13,9 @@ const translations = {
     "planner.destination": "Destination",
     "planner.service": "Service",
     "planner.full": "Full support",
+    "planner.airport": "Airport pickup",
+    "planner.tour": "Guided tour",
+    "planner.translation": "Translation",
     "planner.language": "Language",
     "planner.cta": "Plan my trip",
     "trust.airport": "Airport pickup",
@@ -28,6 +32,11 @@ const translations = {
     "destinations.kicker": "Tour Ghana with local guidance",
     "destinations.title": "Premium Ghana destinations to explore",
     "destinations.copy": "From heritage castles and canopy walks to waterfalls, beaches, city landmarks and national parks, we help you plan routes that fit your time, budget and language needs.",
+    "gallery.kicker": "Ghana in pictures",
+    "gallery.title": "A premium look at places we can help you experience",
+    "gallery.copy": "Browse real destination images from Ghana, from coastal heritage sites to waterfalls, safari routes, city landmarks and cultural spaces.",
+    "actions.book": "Book now",
+    "actions.custom": "Custom",
     "border.kicker": "Ghana, Cote d'Ivoire, Togo and Benin",
     "border.title": "Support across English and French-speaking West Africa",
     "border.copy": "AfriConnect GH helps French-speaking visitors feel confident in Ghana and helps Ghanaians communicate, travel and settle smoothly in neighbouring francophone countries.",
@@ -45,6 +54,7 @@ const translations = {
   fr: {
     "nav.services": "Services",
     "nav.destinations": "Destinations",
+    "nav.gallery": "Galerie",
     "nav.offers": "Offres",
     "nav.contact": "Contact",
     "hero.eyebrow": "Assistance bilingue pour voyager et s'installer",
@@ -55,6 +65,9 @@ const translations = {
     "planner.destination": "Destination",
     "planner.service": "Service",
     "planner.full": "Accompagnement complet",
+    "planner.airport": "Accueil aeroport",
+    "planner.tour": "Visite guidee",
+    "planner.translation": "Traduction",
     "planner.language": "Langue",
     "planner.cta": "Planifier mon voyage",
     "trust.airport": "Accueil aeroport",
@@ -71,6 +84,11 @@ const translations = {
     "destinations.kicker": "Visitez le Ghana avec un guide local",
     "destinations.title": "Destinations premium au Ghana",
     "destinations.copy": "Des chateaux historiques aux passerelles en foret, cascades, plages, monuments urbains et parcs nationaux, nous preparons des itineraires adaptes a votre temps, budget et langue.",
+    "gallery.kicker": "Le Ghana en images",
+    "gallery.title": "Un apercu premium des lieux que nous pouvons vous faire decouvrir",
+    "gallery.copy": "Parcourez de vraies images de destinations au Ghana, des sites historiques cotiers aux cascades, safaris, monuments urbains et espaces culturels.",
+    "actions.book": "Reserver",
+    "actions.custom": "Sur mesure",
     "border.kicker": "Ghana, Cote d'Ivoire, Togo et Benin",
     "border.title": "Accompagnement entre l'Afrique de l'Ouest anglophone et francophone",
     "border.copy": "AfriConnect GH aide les visiteurs francophones a se sentir confiants au Ghana et aide les Ghaneens a communiquer, voyager et s'installer dans les pays francophones voisins.",
@@ -152,6 +170,17 @@ const categories = [
   { image: images.larabanga, en: "Culture", fr: "Culture" }
 ];
 
+const galleryItems = [
+  { image: images.capeCoast, title: "Cape Coast Castle", en: "Coastal heritage", fr: "Patrimoine cotier" },
+  { image: images.elmina, title: "Elmina Castle", en: "Historic castle route", fr: "Route des chateaux" },
+  { image: images.wli, title: "Wli Waterfalls", en: "Nature escape", fr: "Sortie nature" },
+  { image: images.mole, title: "Mole National Park", en: "Safari planning", fr: "Organisation safari" },
+  { image: images.accra, title: "Independence Square", en: "Accra city tour", fr: "Visite d'Accra" },
+  { image: images.nkrumah, title: "Kwame Nkrumah Memorial Park", en: "National landmark", fr: "Monument national" },
+  { image: images.beach, title: "Labadi and Ada coast", en: "Beach days", fr: "Journees plage" },
+  { image: images.larabanga, title: "Larabanga Mosque", en: "Northern culture", fr: "Culture du nord" }
+];
+
 let lang = detectLanguage();
 let content = { announcements: [], offers: [], banners: [] };
 let activeFilter = "all";
@@ -227,6 +256,20 @@ function renderCategories() {
   `).join("");
 }
 
+function renderGallery() {
+  const grid = document.querySelector("#galleryGrid");
+  if (!grid) return;
+  grid.innerHTML = galleryItems.map((item, index) => `
+    <article class="gallery-card ${index === 0 || index === 3 ? "wide" : ""}">
+      <img src="${item.image}" alt="${item.title}" loading="lazy">
+      <div>
+        <span>${item[lang]}</span>
+        <strong>${item.title}</strong>
+      </div>
+    </article>
+  `).join("");
+}
+
 function renderServices() {
   document.querySelector("#serviceGrid").innerHTML = services.map((service) => {
     const [title, body] = service[lang];
@@ -249,7 +292,7 @@ function renderDestinations() {
         <p>${item.region}</p>
         <h3>${item.place}</h3>
         <span>${item[lang]}</span>
-        <footer><strong>${item.price}</strong><a href="https://wa.me/233597154822">Book now</a></footer>
+        <footer><strong>${item.price === "Custom" ? t("actions.custom") : item.price}</strong><a href="https://wa.me/233597154822">${t("actions.book")}</a></footer>
       </div>
     </article>
   `).join("");
@@ -278,6 +321,7 @@ function renderContent() {
 function renderAll() {
   renderHeroGallery();
   renderCategories();
+  renderGallery();
   renderServices();
   renderFilters();
   renderDestinations();

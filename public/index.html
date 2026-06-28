@@ -17,6 +17,7 @@
         <nav class="nav" aria-label="Main navigation">
           <a href="#services" data-i18n="nav.services">Services</a>
           <a href="#destinations" data-i18n="nav.destinations">Destinations</a>
+          <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
           <a href="#offers" data-i18n="nav.offers">Offers</a>
           <a href="#contact" data-i18n="nav.contact">Contact</a>
         </nav>
@@ -60,9 +61,9 @@
               <span data-i18n="planner.service">Service</span>
               <select>
                 <option data-i18n="planner.full">Full support</option>
-                <option>Airport pickup</option>
-                <option>Guided tour</option>
-                <option>Translation</option>
+                <option data-i18n="planner.airport">Airport pickup</option>
+                <option data-i18n="planner.tour">Guided tour</option>
+                <option data-i18n="planner.translation">Translation</option>
               </select>
             </label>
             <label>
@@ -96,6 +97,15 @@
         </div>
         <div class="filter-bar" id="destinationFilters"></div>
         <div class="destination-grid" id="destinationGrid"></div>
+      </section>
+
+      <section id="gallery" class="section gallery-section">
+        <div class="section-head">
+          <p class="section-kicker" data-i18n="gallery.kicker">Ghana in pictures</p>
+          <h2 data-i18n="gallery.title">A premium look at places we can help you experience</h2>
+          <p data-i18n="gallery.copy">Browse real destination images from Ghana, from coastal heritage sites to waterfalls, safari routes, city landmarks and cultural spaces.</p>
+        </div>
+        <div id="galleryGrid" class="gallery-grid"></div>
       </section>
 
       <section class="live-band" aria-label="Latest updates">

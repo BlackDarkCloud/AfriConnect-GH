@@ -658,6 +658,77 @@ h1 {
   font-weight: 850;
 }
 
+.gallery-section {
+  padding-top: 28px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 260px;
+  gap: 18px;
+}
+
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 260px;
+  border: 1px solid rgba(6, 63, 36, 0.1);
+  border-radius: 8px;
+  background: #dbe8df;
+  box-shadow: 0 18px 48px rgba(6, 63, 36, 0.11);
+}
+
+.gallery-card.wide {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 420ms ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 42%, rgba(4, 31, 18, 0.82));
+}
+
+.gallery-card div {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+  z-index: 1;
+  color: white;
+}
+
+.gallery-card span {
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  padding: 0 10px;
+  color: #17301f;
+  background: var(--gold-2);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.gallery-card strong {
+  display: block;
+  margin-top: 10px;
+  font-size: clamp(1.15rem, 2vw, 1.75rem);
+}
+
 .cross-border {
   display: grid;
   grid-template-columns: minmax(0, 0.82fr) minmax(280px, 0.5fr);
@@ -907,8 +978,14 @@ textarea {
 
   .trip-planner,
   .category-rail,
-  .metrics-section {
+  .metrics-section,
+  .gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-card.wide {
+    grid-column: span 1;
+    grid-row: span 1;
   }
 
   .hero-media {
@@ -969,8 +1046,13 @@ textarea {
   .destination-grid,
   .trip-planner,
   .category-rail,
-  .metrics-section {
+  .metrics-section,
+  .gallery-grid {
     grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-auto-rows: 300px;
   }
 
   .hero {
@@ -996,5 +1078,3 @@ textarea {
     flex-direction: column;
   }
 }
-  overflow: hidden;
-  border-radius: 8px;

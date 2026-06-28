@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AfriConnect GH bilingual travel, tourism, translation, relocation and business support in Ghana.">
+    <title>AfriConnect GH</title>
+    <link rel="preload" href="/assets/africonnect-logo.png" as="image">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="AfriConnect GH home">
+        <img src="/assets/africonnect-logo.png" alt="AfriConnect GH logo">
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#destinations" data-i18n="nav.destinations">Destinations</a>
+        <a href="#offers" data-i18n="nav.offers">Offers</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="lang-switch" aria-label="Language switcher">
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="fr">FR</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Bilingual travel and settlement support</p>
+          <h1 data-i18n="hero.title">AfriConnect GH</h1>
+          <p class="hero-lead" data-i18n="hero.lead">Your trusted bridge for Ghana travel, tourism, studies, business, translation and cross-border support across English and French-speaking West Africa.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="https://wa.me/233597154822" data-i18n="hero.whatsapp">WhatsApp us</a>
+            <a class="btn secondary" href="#destinations" data-i18n="hero.explore">Explore Ghana</a>
+          </div>
+          <div class="trust-strip">
+            <span data-i18n="trust.airport">Airport pickup</span>
+            <span data-i18n="trust.translation">Translation</span>
+            <span data-i18n="trust.tours">Guided tours</span>
+            <span data-i18n="trust.business">Business support</span>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="/assets/africonnect-flyer.png" alt="AfriConnect GH travel services in Ghana">
+        </div>
+      </section>
+
+      <section class="live-band" aria-label="Latest updates">
+        <div>
+          <p class="section-kicker" data-i18n="announcements.kicker">Latest from AfriConnect GH</p>
+          <h2 data-i18n="announcements.title">Announcements</h2>
+        </div>
+        <div id="announcementList" class="announcement-list"></div>
+      </section>
+
+      <section id="services" class="section">
+        <div class="section-head">
+          <p class="section-kicker" data-i18n="services.kicker">What we handle</p>
+          <h2 data-i18n="services.title">One partner for every step in Ghana</h2>
+          <p data-i18n="services.copy">We reduce stress for visitors who do not speak the local language and support Ghanaians travelling or doing business in nearby French-speaking countries.</p>
+        </div>
+        <div class="service-grid" id="serviceGrid"></div>
+      </section>
+
+      <section id="destinations" class="section destinations">
+        <div class="section-head">
+          <p class="section-kicker" data-i18n="destinations.kicker">Tour Ghana with local guidance</p>
+          <h2 data-i18n="destinations.title">Major tourist sites and experiences</h2>
+          <p data-i18n="destinations.copy">From heritage castles and canopy walks to waterfalls, beaches, city landmarks and national parks, we help you plan routes that fit your time, budget and language needs.</p>
+        </div>
+        <div class="filter-bar" id="destinationFilters"></div>
+        <div class="destination-grid" id="destinationGrid"></div>
+      </section>
+
+      <section class="section cross-border">
+        <div class="cross-copy">
+          <p class="section-kicker" data-i18n="border.kicker">Ghana, Côte d'Ivoire, Togo and Benin</p>
+          <h2 data-i18n="border.title">Support across English and French-speaking West Africa</h2>
+          <p data-i18n="border.copy">AfriConnect GH helps French-speaking visitors feel confident in Ghana and helps Ghanaians communicate, travel and settle smoothly in neighbouring francophone countries.</p>
+        </div>
+        <div class="country-row">
+          <span>Ghana</span>
+          <span>Côte d'Ivoire</span>
+          <span>Togo</span>
+          <span>Benin</span>
+        </div>
+      </section>
+
+      <section id="offers" class="section">
+        <div class="section-head">
+          <p class="section-kicker" data-i18n="offers.kicker">Current packages</p>
+          <h2 data-i18n="offers.title">Offers and travel packages</h2>
+        </div>
+        <div id="offerGrid" class="offer-grid"></div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div>
+          <p class="section-kicker" data-i18n="contact.kicker">Start your trip with confidence</p>
+          <h2 data-i18n="contact.title">Talk to AfriConnect GH today</h2>
+          <p data-i18n="contact.copy">Send us your arrival date, language, destination, budget and the type of help you need. We will guide you before and during your stay.</p>
+        </div>
+        <div class="contact-panel">
+          <a href="tel:+233597154822">+233 597 154 822</a>
+          <a href="mailto:africonnectgh@gmail.com">africonnectgh@gmail.com</a>
+          <a href="https://wa.me/233597154822">WhatsApp</a>
+          <span>Accra, Ghana</span>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>AfriConnect GH</span>
+      <a href="/admin.html" data-i18n="footer.admin">Admin</a>
+    </footer>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

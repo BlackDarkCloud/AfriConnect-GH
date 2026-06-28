@@ -1,0 +1,13 @@
+{
+  "name": "africonnect-gh",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AfriConnect GH bilingual travel and tour website with admin content tools.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

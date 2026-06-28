@@ -1,0 +1,64 @@
+{
+  "announcements": [
+    {
+      "id": "welcome-2026",
+      "title": {
+        "en": "French and English travel support now available in Accra",
+        "fr": "Assistance voyage en français et anglais disponible à Accra"
+      },
+      "body": {
+        "en": "Book airport pickup, hotel support, guided tourism, school assistance, business errands, and translation before you arrive in Ghana.",
+        "fr": "Réservez l'accueil à l'aéroport, l'assistance logement, le tourisme guidé, l'accompagnement scolaire, les démarches d'affaires et la traduction avant votre arrivée au Ghana."
+      },
+      "date": "2026-06-28"
+    }
+  ],
+  "offers": [
+    {
+      "id": "airport-soft-landing",
+      "title": {
+        "en": "Airport soft-landing package",
+        "fr": "Pack arrivée sans stress"
+      },
+      "body": {
+        "en": "Meet-and-greet, SIM card support, first-day city orientation, and hotel transfer.",
+        "fr": "Accueil, assistance carte SIM, orientation en ville et transfert vers votre logement."
+      },
+      "price": "From GHS 450",
+      "tag": {
+        "en": "Popular",
+        "fr": "Populaire"
+      }
+    },
+    {
+      "id": "ghana-discovery",
+      "title": {
+        "en": "Ghana discovery tour",
+        "fr": "Circuit découverte du Ghana"
+      },
+      "body": {
+        "en": "Accra city tour, Cape Coast heritage trip, Kakum canopy walk, and local translation support.",
+        "fr": "Visite d'Accra, voyage historique à Cape Coast, passerelle de Kakum et interprétation locale."
+      },
+      "price": "Custom quote",
+      "tag": {
+        "en": "Tour",
+        "fr": "Tourisme"
+      }
+    }
+  ],
+  "banners": [
+    {
+      "id": "brand-flyer",
+      "title": {
+        "en": "Your trusted bilingual partner in Ghana",
+        "fr": "Votre partenaire bilingue de confiance au Ghana"
+      },
+      "body": {
+        "en": "We help foreign visitors, students, entrepreneurs, families, and Ghanaians travelling across French-speaking West Africa.",
+        "fr": "Nous accompagnons les visiteurs, étudiants, entrepreneurs, familles et Ghanéens vers l'Afrique de l'Ouest francophone."
+      },
+      "image": "/assets/africonnect-flyer.png"
+    }
+  ]
+}

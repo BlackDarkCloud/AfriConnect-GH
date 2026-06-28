@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AfriConnect GH Admin</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="admin-body">
+    <main class="admin-shell">
+      <section class="admin-login" id="loginView">
+        <img src="/assets/africonnect-logo.png" alt="AfriConnect GH logo">
+        <h1>Admin panel</h1>
+        <p>Manage announcements, offers, banners and uploaded images.</p>
+        <form id="loginForm">
+          <label>Username<input name="username" autocomplete="username" required></label>
+          <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+          <button class="btn primary" type="submit">Sign in</button>
+          <small>Default login: admin / admin123. Change it with ADMIN_USER and ADMIN_PASS before going live.</small>
+        </form>
+      </section>
+
+      <section class="admin-app hidden" id="adminView">
+        <header class="admin-top">
+          <div>
+            <p class="section-kicker">AfriConnect GH</p>
+            <h1>Content dashboard</h1>
+          </div>
+          <div class="admin-actions">
+            <a class="btn secondary" href="/">View website</a>
+            <button class="btn danger" id="logoutButton">Logout</button>
+          </div>
+        </header>
+
+        <div class="admin-grid">
+          <form class="admin-card" id="announcementForm">
+            <h2>Post announcement</h2>
+            <label>English title<input name="titleEn" required></label>
+            <label>French title<input name="titleFr" required></label>
+            <label>English message<textarea name="bodyEn" required></textarea></label>
+            <label>French message<textarea name="bodyFr" required></textarea></label>
+            <button class="btn primary" type="submit">Publish announcement</button>
+          </form>
+
+          <form class="admin-card" id="offerForm">
+            <h2>Post offer</h2>
+            <label>English title<input name="titleEn" required></label>
+            <label>French title<input name="titleFr" required></label>
+            <label>English details<textarea name="bodyEn" required></textarea></label>
+            <label>French details<textarea name="bodyFr" required></textarea></label>
+            <label>Price or note<input name="price" placeholder="From GHS 450"></label>
+            <label>English tag<input name="tagEn" placeholder="Popular"></label>
+            <label>French tag<input name="tagFr" placeholder="Populaire"></label>
+            <button class="btn primary" type="submit">Publish offer</button>
+          </form>
+
+          <form class="admin-card" id="bannerForm" enctype="multipart/form-data">
+            <h2>Upload banner</h2>
+            <label>English title<input name="titleEn" required></label>
+            <label>French title<input name="titleFr" required></label>
+            <label>English text<textarea name="bodyEn" required></textarea></label>
+            <label>French text<textarea name="bodyFr" required></textarea></label>
+            <label>Banner image<input name="image" type="file" accept="image/png,image/jpeg,image/webp"></label>
+            <button class="btn primary" type="submit">Publish banner</button>
+          </form>
+        </div>
+
+        <section class="admin-card">
+          <h2>Current content</h2>
+          <div id="contentList" class="content-list"></div>
+        </section>
+      </section>
+    </main>
+    <script src="/admin.js" type="module"></script>
+  </body>
+</html>

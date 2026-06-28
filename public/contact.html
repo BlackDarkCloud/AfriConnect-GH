@@ -22,6 +22,20 @@
           <span>Accra, Ghana</span>
         </div>
       </section>
+
+      <section class="section reveal">
+        <div class="section-head">
+          <p class="section-kicker">Request</p>
+          <h2>Send your trip details</h2>
+        </div>
+        <form id="quoteForm" class="quote-form">
+          <label><span data-i18n="form.name">Full name</span><input name="name" required></label>
+          <label><span data-i18n="form.service">Service needed</span><input name="service" placeholder="Airport pickup, tour, translation..." required></label>
+          <label><span data-i18n="form.date">Travel date</span><input name="date" type="date"></label>
+          <label class="full"><span data-i18n="form.message">What do you need help with?</span><textarea name="message" required></textarea></label>
+          <button class="btn primary whatsapp-btn" type="submit" data-i18n="form.send">Send request on WhatsApp</button>
+        </form>
+      </section>
     </main>
     <footer class="site-footer"></footer>
     <div id="languageModal" class="language-modal" aria-modal="true" role="dialog"></div>

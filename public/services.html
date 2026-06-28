@@ -4,27 +4,35 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AfriConnect GH | Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body data-page="services">
     <header class="site-header"></header>
     <main>
-      <section class="page-title reveal">
-        <p class="section-kicker" data-i18n="services.kicker">What we handle</p>
-        <h1 data-i18n="services.title">Services designed for smooth movement in Ghana.</h1>
-        <p data-i18n="services.copy">From arrival to settlement, tourism, translation, errands and payment guidance, we help you feel at home faster.</p>
-      </section>
-      <section class="section reveal">
-        <div id="serviceGrid" class="service-grid"></div>
-      </section>
-      <section class="section money-section reveal">
-        <div>
-          <p class="section-kicker" data-i18n="money.kicker">Travel and payment support</p>
-          <h2 id="moneyTitle" data-i18n="money.title">Money transfer assistance</h2>
-          <p id="moneyBody" data-i18n="money.copy">We guide clients through reliable money transfer options, local payment steps, mobile money support and safe payment coordination during their stay.</p>
+      <div class="page-header reveal">
+        <div class="page-header-inner">
+          <p class="t-eyebrow" data-i18n="services.kicker">What we handle</p>
+          <h1 class="t-h1" data-i18n="services.title">Travel, tour &amp; settlement services</h1>
+          <p data-i18n="services.copy">Choose one service or combine everything into a full support package. Every journey is different — we adapt to yours.</p>
         </div>
-        <a class="btn primary" href="https://wa.me/233597154822" data-i18n="money.cta">Ask about transfers</a>
-      </section>
+      </div>
+      <div class="services-bg">
+        <section class="section reveal">
+          <div class="service-grid" id="serviceGrid"></div>
+        </section>
+      </div>
+      <div class="cta-band reveal">
+        <div class="cta-inner">
+          <p class="t-eyebrow">Money transfer</p>
+          <h2 class="t-h2" id="moneyTitle" data-i18n="money.title">Money transfer assistance</h2>
+          <p id="moneyBody" data-i18n="money.copy">We guide clients through reliable money transfer options, local payment steps, mobile money support and safe payment coordination during their stay.</p>
+          <div class="cta-actions">
+            <a class="btn primary large whatsapp-btn" href="https://wa.me/233597154822" data-i18n="money.cta">Ask about transfers</a>
+          </div>
+        </div>
+      </div>
     </main>
     <footer class="site-footer"></footer>
     <div id="languageModal" class="language-modal" aria-modal="true" role="dialog"></div>

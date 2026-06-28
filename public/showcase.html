@@ -4,27 +4,33 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AfriConnect GH | Showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body data-page="showcase">
     <header class="site-header"></header>
     <main>
-      <section class="page-title reveal">
-        <p class="section-kicker" data-i18n="destinations.kicker">Tour Ghana with local guidance</p>
-        <h1 data-i18n="destinations.title">Premium Ghana destinations to explore</h1>
-        <p data-i18n="destinations.copy">From heritage castles and canopy walks to waterfalls, beaches, city landmarks and national parks, we help you plan routes that fit your time, budget and language needs.</p>
-      </section>
-      <section class="section reveal">
-        <div id="destinationFilters" class="filter-bar"></div>
-        <div id="destinationGrid" class="destination-grid"></div>
-      </section>
-      <section class="section reveal">
-        <div class="section-head">
-          <p class="section-kicker" data-i18n="offers.kicker">Current packages</p>
-          <h2 data-i18n="offers.title">Offers and travel packages</h2>
+      <div class="page-header reveal">
+        <div class="page-header-inner">
+          <p class="t-eyebrow" data-i18n="destinations.kicker">Curated routes</p>
+          <h1 class="t-h1" data-i18n="destinations.title">Premium Ghana destinations</h1>
+          <p data-i18n="destinations.copy">From heritage castles and canopy walks to waterfalls, beaches, city landmarks and national parks — routes tailored to your time, budget and language.</p>
         </div>
-        <div id="offerGrid" class="offer-grid"></div>
+      </div>
+      <section class="section reveal">
+        <div class="filter-row" id="destinationFilters"></div>
+        <div class="dest-grid" id="destinationGrid"></div>
       </section>
+      <div class="how-section">
+        <div class="section-full reveal">
+          <div class="section-head">
+            <p class="t-eyebrow" data-i18n="offers.kicker">Current packages</p>
+            <h2 class="t-h2" data-i18n="offers.title">Travel packages &amp; offers</h2>
+          </div>
+          <div class="service-grid" id="offerGrid"></div>
+        </div>
+      </div>
     </main>
     <footer class="site-footer"></footer>
     <div id="languageModal" class="language-modal" aria-modal="true" role="dialog"></div>

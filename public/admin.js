@@ -61,9 +61,10 @@ function formJson(form) {
 
 document.querySelector("#loginForm").addEventListener("submit", async (event) => {
   event.preventDefault();
+  const form = event.currentTarget;
   try {
-    await api("/api/login", { method: "POST", body: JSON.stringify(formJson(event.currentTarget)) });
-    event.currentTarget.reset();
+    await api("/api/login", { method: "POST", body: JSON.stringify(formJson(form)) });
+    form.reset();
     showAdmin(true);
     await loadContent();
   } catch (error) {
@@ -78,22 +79,25 @@ document.querySelector("#logoutButton").addEventListener("click", async () => {
 
 document.querySelector("#announcementForm").addEventListener("submit", async (event) => {
   event.preventDefault();
-  await api("/api/admin/announcements", { method: "POST", body: JSON.stringify(formJson(event.currentTarget)) });
-  event.currentTarget.reset();
+  const form = event.currentTarget;
+  await api("/api/admin/announcements", { method: "POST", body: JSON.stringify(formJson(form)) });
+  form.reset();
   await loadContent();
 });
 
 document.querySelector("#offerForm").addEventListener("submit", async (event) => {
   event.preventDefault();
-  await api("/api/admin/offers", { method: "POST", body: JSON.stringify(formJson(event.currentTarget)) });
-  event.currentTarget.reset();
+  const form = event.currentTarget;
+  await api("/api/admin/offers", { method: "POST", body: JSON.stringify(formJson(form)) });
+  form.reset();
   await loadContent();
 });
 
 document.querySelector("#bannerForm").addEventListener("submit", async (event) => {
   event.preventDefault();
-  await api("/api/admin/banners", { method: "POST", body: new FormData(event.currentTarget) });
-  event.currentTarget.reset();
+  const form = event.currentTarget;
+  await api("/api/admin/banners", { method: "POST", body: new FormData(form) });
+  form.reset();
   await loadContent();
 });
 

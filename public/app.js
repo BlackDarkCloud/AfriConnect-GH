@@ -1,40 +1,34 @@
 const translations = {
   en: {
+    "nav.welcome": "Welcome",
     "nav.services": "Services",
-    "nav.destinations": "Destinations",
+    "nav.about": "About",
+    "nav.showcase": "Showcase",
     "nav.gallery": "Gallery",
-    "nav.offers": "Offers",
     "nav.contact": "Contact",
-    "hero.eyebrow": "Bilingual travel and settlement support",
-    "hero.title": "AfriConnect GH",
-    "hero.lead": "Your trusted bridge for Ghana travel, tourism, studies, business, translation and cross-border support across English and French-speaking West Africa.",
-    "hero.whatsapp": "WhatsApp us",
-    "hero.explore": "Explore Ghana",
-    "planner.destination": "Destination",
-    "planner.service": "Service",
-    "planner.full": "Full support",
-    "planner.airport": "Airport pickup",
-    "planner.tour": "Guided tour",
-    "planner.translation": "Translation",
-    "planner.language": "Language",
-    "planner.cta": "Plan my trip",
+    "welcome.eyebrow": "Bilingual travel support in Ghana",
+    "welcome.title": "Move through Ghana with confidence.",
+    "welcome.copy": "AfriConnect GH helps foreigners overcome language barriers in Ghana and supports Ghanaians travelling across Cote d'Ivoire, Togo and Benin.",
+    "welcome.primary": "Explore services",
+    "welcome.secondary": "Talk to us",
+    "home.quickKicker": "Fast help",
+    "home.quickTitle": "What do you need help with today?",
     "trust.airport": "Airport pickup",
     "trust.translation": "Translation",
     "trust.tours": "Guided tours",
-    "trust.business": "Business support",
-    "categories.kicker": "Choose your experience",
-    "categories.title": "Travel Ghana by mood, mission and language",
-    "announcements.kicker": "Latest from AfriConnect GH",
-    "announcements.title": "Announcements",
+    "trust.money": "Money transfer help",
     "services.kicker": "What we handle",
-    "services.title": "A premium local partner for every step in Ghana",
-    "services.copy": "We reduce stress for visitors who do not speak the local language and support Ghanaians travelling or doing business in nearby French-speaking countries.",
+    "services.title": "Services designed for smooth movement in Ghana.",
+    "services.copy": "From arrival to settlement, tourism, translation, errands and payment guidance, we help you feel at home faster.",
+    "about.eyebrow": "About AfriConnect GH",
+    "about.title": "A trusted bridge between people, language and place.",
+    "about.copy": "We are a Ghana-based bilingual support company helping visitors, students, families, entrepreneurs and travellers communicate, settle and move safely.",
     "destinations.kicker": "Tour Ghana with local guidance",
     "destinations.title": "Premium Ghana destinations to explore",
     "destinations.copy": "From heritage castles and canopy walks to waterfalls, beaches, city landmarks and national parks, we help you plan routes that fit your time, budget and language needs.",
-    "gallery.kicker": "Ghana in pictures",
-    "gallery.title": "A premium look at places we can help you experience",
-    "gallery.copy": "Browse real destination images from Ghana, from coastal heritage sites to waterfalls, safari routes, city landmarks and cultural spaces.",
+    "gallery.kicker": "Customer moments",
+    "gallery.title": "Our clients, trips and Ghana experiences.",
+    "gallery.copy": "This gallery is for AfriConnect GH customer images, guided visits, airport support moments, tours and real service memories.",
     "money.kicker": "Travel and payment support",
     "money.title": "Money transfer assistance",
     "money.copy": "We guide clients through reliable money transfer options, local payment steps, mobile money support and safe payment coordination during their stay.",
@@ -55,44 +49,44 @@ const translations = {
     "contact.kicker": "Start your trip with confidence",
     "contact.title": "Talk to AfriConnect GH today",
     "contact.copy": "Send us your arrival date, language, destination, budget and the type of help you need. We will guide you before and during your stay.",
+    "modal.title": "Choose your language",
+    "modal.copy": "We will remember your choice for future visits.",
+    "modal.en": "Continue in English",
+    "modal.fr": "Continuer en francais",
+    "float.language": "Language",
+    "float.whatsapp": "WhatsApp",
     "footer.admin": "Admin"
   },
   fr: {
+    "nav.welcome": "Accueil",
     "nav.services": "Services",
-    "nav.destinations": "Destinations",
+    "nav.about": "A propos",
+    "nav.showcase": "Vitrine",
     "nav.gallery": "Galerie",
-    "nav.offers": "Offres",
     "nav.contact": "Contact",
-    "hero.eyebrow": "Assistance bilingue pour voyager et s'installer",
-    "hero.title": "AfriConnect GH",
-    "hero.lead": "Votre passerelle de confiance pour le tourisme, les etudes, les affaires, la traduction et l'accompagnement entre le Ghana anglophone et l'Afrique de l'Ouest francophone.",
-    "hero.whatsapp": "Ecrivez-nous",
-    "hero.explore": "Decouvrir le Ghana",
-    "planner.destination": "Destination",
-    "planner.service": "Service",
-    "planner.full": "Accompagnement complet",
-    "planner.airport": "Accueil aeroport",
-    "planner.tour": "Visite guidee",
-    "planner.translation": "Traduction",
-    "planner.language": "Langue",
-    "planner.cta": "Planifier mon voyage",
+    "welcome.eyebrow": "Assistance voyage bilingue au Ghana",
+    "welcome.title": "Deplacez-vous au Ghana avec confiance.",
+    "welcome.copy": "AfriConnect GH aide les visiteurs a surmonter les barrieres linguistiques au Ghana et accompagne les Ghaneens vers la Cote d'Ivoire, le Togo et le Benin.",
+    "welcome.primary": "Voir les services",
+    "welcome.secondary": "Nous contacter",
+    "home.quickKicker": "Aide rapide",
+    "home.quickTitle": "De quoi avez-vous besoin aujourd'hui ?",
     "trust.airport": "Accueil aeroport",
     "trust.translation": "Traduction",
     "trust.tours": "Visites guidees",
-    "trust.business": "Appui affaires",
-    "categories.kicker": "Choisissez votre experience",
-    "categories.title": "Voyagez au Ghana selon votre mission et votre langue",
-    "announcements.kicker": "Actualites AfriConnect GH",
-    "announcements.title": "Annonces",
+    "trust.money": "Aide transfert d'argent",
     "services.kicker": "Ce que nous gerons",
-    "services.title": "Un partenaire local premium pour chaque etape au Ghana",
-    "services.copy": "Nous reduisons le stress des visiteurs qui ne parlent pas la langue locale et accompagnons les Ghaneens qui voyagent ou travaillent dans les pays francophones voisins.",
+    "services.title": "Des services pour bouger facilement au Ghana.",
+    "services.copy": "De l'arrivee a l'installation, tourisme, traduction, demarches et paiements, nous vous aidons a vous sentir chez vous plus vite.",
+    "about.eyebrow": "A propos d'AfriConnect GH",
+    "about.title": "Un pont de confiance entre personnes, langues et lieux.",
+    "about.copy": "Nous sommes une entreprise bilingue basee au Ghana qui aide visiteurs, etudiants, familles, entrepreneurs et voyageurs a communiquer, s'installer et se deplacer en securite.",
     "destinations.kicker": "Visitez le Ghana avec un guide local",
     "destinations.title": "Destinations premium au Ghana",
     "destinations.copy": "Des chateaux historiques aux passerelles en foret, cascades, plages, monuments urbains et parcs nationaux, nous preparons des itineraires adaptes a votre temps, budget et langue.",
-    "gallery.kicker": "Le Ghana en images",
-    "gallery.title": "Un apercu premium des lieux que nous pouvons vous faire decouvrir",
-    "gallery.copy": "Parcourez de vraies images de destinations au Ghana, des sites historiques cotiers aux cascades, safaris, monuments urbains et espaces culturels.",
+    "gallery.kicker": "Moments clients",
+    "gallery.title": "Nos clients, voyages et experiences au Ghana.",
+    "gallery.copy": "Cette galerie presente les images clients AfriConnect GH, visites guidees, accueil aeroport, circuits et vrais souvenirs de service.",
     "money.kicker": "Voyage et assistance paiement",
     "money.title": "Assistance transfert d'argent",
     "money.copy": "Nous guidons les clients dans les options fiables de transfert d'argent, les paiements locaux, le mobile money et la coordination securisee pendant leur sejour.",
@@ -113,6 +107,12 @@ const translations = {
     "contact.kicker": "Commencez votre voyage avec confiance",
     "contact.title": "Parlez a AfriConnect GH aujourd'hui",
     "contact.copy": "Envoyez-nous votre date d'arrivee, langue, destination, budget et le type d'aide souhaitee. Nous vous guiderons avant et pendant votre sejour.",
+    "modal.title": "Choisissez votre langue",
+    "modal.copy": "Nous garderons votre choix pour vos prochaines visites.",
+    "modal.en": "Continue in English",
+    "modal.fr": "Continuer en francais",
+    "float.language": "Langue",
+    "float.whatsapp": "WhatsApp",
     "footer.admin": "Admin"
   }
 };
@@ -120,16 +120,11 @@ const translations = {
 const images = {
   capeCoast: "/assets/tourism/cape-coast-castle.jpg",
   elmina: "/assets/tourism/elmina-castle.jpg",
-  kakum: "/assets/tourism/cape-coast-castle.jpg",
   mole: "/assets/tourism/mole-national-park.jpg",
   wli: "/assets/tourism/wli-waterfalls.jpg",
   nkrumah: "/assets/tourism/kwame-nkrumah.jpg",
   accra: "/assets/tourism/independence-square.jpg",
-  kente: "/assets/tourism/elmina-castle.jpg",
-  bosomtwe: "/assets/tourism/wli-waterfalls.jpg",
-  nzulezu: "/assets/tourism/labadi-beach.jpg",
   beach: "/assets/tourism/labadi-beach.jpg",
-  aburi: "/assets/tourism/larabanga-mosque.jpg",
   larabanga: "/assets/tourism/larabanga-mosque.jpg"
 };
 
@@ -140,9 +135,7 @@ const services = [
   { icon: "ED", en: ["School and university help", "Admissions guidance, campus visits, registration support and student errands."], fr: ["Accompagnement scolaire", "Admissions, visites de campus, inscriptions et demarches etudiantes."] },
   { icon: "B", en: ["Business and investment errands", "Market visits, supplier meetings, office search and local coordination."], fr: ["Affaires et investissements", "Visites de marche, rendez-vous fournisseurs, recherche de bureaux et coordination locale."] },
   { icon: "TO", en: ["Tourism and guided visits", "Custom Ghana tours with language support, transport planning and local tips."], fr: ["Tourisme et visites guidees", "Circuits personnalises avec appui linguistique, transport et conseils locaux."] },
-  { icon: "V", en: ["Visa and immigration guidance", "Document preparation support, appointment planning and follow-up reminders."], fr: ["Visa et immigration", "Aide aux documents, preparation de rendez-vous et rappels de suivi."] },
-  { icon: "WA", en: ["Cross-border travel support", "Help for trips to Cote d'Ivoire, Togo, Benin and other regional routes."], fr: ["Voyage transfrontalier", "Aide pour la Cote d'Ivoire, le Togo, le Benin et autres trajets regionaux."] }
-  ,
+  { icon: "WA", en: ["Cross-border travel support", "Help for trips to Cote d'Ivoire, Togo, Benin and other regional routes."], fr: ["Voyage transfrontalier", "Aide pour la Cote d'Ivoire, le Togo, le Benin et autres trajets regionaux."] },
   { icon: "MT", en: ["Money transfer assistance", "Reliable guidance for mobile money, local payments and safe transfer coordination."], fr: ["Assistance transfert d'argent", "Conseils fiables pour mobile money, paiements locaux et coordination de transferts securises."] }
 ];
 
@@ -154,73 +147,54 @@ const heroSlides = [
 ];
 
 const destinations = [
-  { cat: "heritage", image: images.capeCoast, place: "Cape Coast Castle", region: "Central Region", price: "Custom", en: "UNESCO-listed coastal heritage site and powerful history stop.", fr: "Site historique cotier classe UNESCO et etape de memoire importante." },
-  { cat: "heritage", image: images.elmina, place: "Elmina Castle", region: "Central Region", price: "Custom", en: "One of Ghana's most visited historic castles near Cape Coast.", fr: "L'un des chateaux historiques les plus visites du Ghana pres de Cape Coast." },
-  { cat: "nature", image: images.kakum, place: "Kakum National Park", region: "Central Region", price: "Custom", en: "Rainforest canopy walkway, hiking and nature education.", fr: "Passerelle en foret tropicale, randonnee et decouverte de la nature." },
-  { cat: "wildlife", image: images.mole, place: "Mole National Park", region: "Savannah Region", price: "Custom", en: "Ghana's leading safari destination for elephants, antelopes and birdlife.", fr: "Grande destination safari du Ghana pour elephants, antilopes et oiseaux." },
-  { cat: "waterfalls", image: images.wli, place: "Wli Waterfalls", region: "Volta Region", price: "Custom", en: "Tall waterfall experience with mountain scenery and village routes.", fr: "Grande cascade avec paysages de montagne et parcours villageois." },
-  { cat: "city", image: images.nkrumah, place: "Kwame Nkrumah Memorial Park", region: "Accra", price: "Custom", en: "Iconic Accra landmark honouring Ghana's first president.", fr: "Lieu emblematique d'Accra dedie au premier president du Ghana." },
-  { cat: "city", image: images.accra, place: "Independence Square", region: "Accra", price: "Custom", en: "National landmark for photos, city tours and Ghanaian history.", fr: "Monument national pour photos, visites d'Accra et histoire ghaneenne." },
-  { cat: "beach", image: images.beach, place: "Ada Foah and Labadi", region: "Greater Accra", price: "Custom", en: "Beach, river estuary, boat rides and weekend escapes.", fr: "Plage, embouchure, balades en bateau et week-ends detente." },
-  { cat: "heritage", image: images.larabanga, place: "Larabanga Mosque", region: "Savannah Region", price: "Custom", en: "Historic mosque and cultural stop near Mole National Park.", fr: "Mosquee historique et etape culturelle pres du parc de Mole." }
+  { cat: "heritage", image: images.capeCoast, place: "Cape Coast Castle", region: "Central Region", en: "UNESCO-listed coastal heritage site and powerful history stop.", fr: "Site historique cotier classe UNESCO et etape de memoire importante." },
+  { cat: "heritage", image: images.elmina, place: "Elmina Castle", region: "Central Region", en: "One of Ghana's most visited historic castles near Cape Coast.", fr: "L'un des chateaux historiques les plus visites du Ghana pres de Cape Coast." },
+  { cat: "wildlife", image: images.mole, place: "Mole National Park", region: "Savannah Region", en: "Ghana's leading safari destination for elephants, antelopes and birdlife.", fr: "Grande destination safari du Ghana pour elephants, antilopes et oiseaux." },
+  { cat: "waterfalls", image: images.wli, place: "Wli Waterfalls", region: "Volta Region", en: "Tall waterfall experience with mountain scenery and village routes.", fr: "Grande cascade avec paysages de montagne et parcours villageois." },
+  { cat: "city", image: images.accra, place: "Independence Square", region: "Accra", en: "National landmark for photos, city tours and Ghanaian history.", fr: "Monument national pour photos, visites d'Accra et histoire ghaneenne." },
+  { cat: "city", image: images.nkrumah, place: "Kwame Nkrumah Memorial Park", region: "Accra", en: "Iconic Accra landmark honouring Ghana's first president.", fr: "Lieu emblematique d'Accra dedie au premier president du Ghana." },
+  { cat: "beach", image: images.beach, place: "Ada Foah and Labadi", region: "Greater Accra", en: "Beach, river estuary, boat rides and weekend escapes.", fr: "Plage, embouchure, balades en bateau et week-ends detente." },
+  { cat: "heritage", image: images.larabanga, place: "Larabanga Mosque", region: "Savannah Region", en: "Historic mosque and cultural stop near Mole National Park.", fr: "Mosquee historique et etape culturelle pres du parc de Mole." }
 ];
 
-const filters = [
-  ["all", "All", "Tous"],
-  ["heritage", "Heritage", "Patrimoine"],
-  ["nature", "Nature", "Nature"],
-  ["wildlife", "Wildlife", "Faune"],
-  ["waterfalls", "Waterfalls", "Cascades"],
-  ["city", "Accra city", "Accra"],
-  ["beach", "Beach", "Plage"]
-];
-
+const filters = [["all", "All", "Tous"], ["heritage", "Heritage", "Patrimoine"], ["wildlife", "Wildlife", "Faune"], ["waterfalls", "Waterfalls", "Cascades"], ["city", "Accra city", "Accra"], ["beach", "Beach", "Plage"]];
 const categories = [
-  { image: images.capeCoast, en: "Heritage", fr: "Patrimoine" },
-  { image: images.wli, en: "Waterfalls", fr: "Cascades" },
-  { image: images.mole, en: "Safari", fr: "Safari" },
-  { image: images.accra, en: "City tours", fr: "Visites urbaines" },
-  { image: images.beach, en: "Beach days", fr: "Plages" },
+  { image: images.capeCoast, en: "Heritage trips", fr: "Voyages historiques" },
+  { image: images.wli, en: "Nature escapes", fr: "Sorties nature" },
+  { image: images.mole, en: "Safari planning", fr: "Organisation safari" },
+  { image: images.accra, en: "City support", fr: "Assistance urbaine" },
+  { image: images.beach, en: "Beach days", fr: "Journees plage" },
   { image: images.larabanga, en: "Culture", fr: "Culture" }
 ];
 
-const galleryItems = [
-  { image: images.capeCoast, title: "Cape Coast Castle", en: "Coastal heritage", fr: "Patrimoine cotier" },
-  { image: images.elmina, title: "Elmina Castle", en: "Historic castle route", fr: "Route des chateaux" },
-  { image: images.wli, title: "Wli Waterfalls", en: "Nature escape", fr: "Sortie nature" },
-  { image: images.mole, title: "Mole National Park", en: "Safari planning", fr: "Organisation safari" },
-  { image: images.accra, title: "Independence Square", en: "Accra city tour", fr: "Visite d'Accra" },
-  { image: images.nkrumah, title: "Kwame Nkrumah Memorial Park", en: "National landmark", fr: "Monument national" },
-  { image: images.beach, title: "Labadi and Ada coast", en: "Beach days", fr: "Journees plage" },
-  { image: images.larabanga, title: "Larabanga Mosque", en: "Northern culture", fr: "Culture du nord" }
-];
-
 let lang = detectLanguage();
-let content = { announcements: [], offers: [], banners: [] };
+let content = { announcements: [], offers: [], gallery: [], testimonials: [], settings: {} };
 let activeFilter = "all";
 let heroSlide = 0;
 
 function detectLanguage() {
   const saved = localStorage.getItem("afc_lang");
   if (saved) return saved;
-  const language = navigator.language?.toLowerCase() || "en";
-  const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
-  const frenchZones = ["Abidjan", "Lome", "Porto", "Cotonou", "Paris"];
-  if (language.startsWith("fr") || frenchZones.some((zone) => timeZone.includes(zone))) return "fr";
-  return "en";
+  const browserLang = navigator.language?.toLowerCase() || "en";
+  return browserLang.startsWith("fr") ? "fr" : "en";
 }
 
 function t(key) {
-  return translations[lang][key] || translations.en[key] || key;
+  return translations[lang]?.[key] || translations.en[key] || key;
 }
 
 function localized(item, key) {
   return item?.[key]?.[lang] || item?.[key]?.en || "";
 }
 
-function setLanguage(next) {
+function qs(selector) {
+  return document.querySelector(selector);
+}
+
+function setLanguage(next, confirmed = true) {
   lang = next;
   localStorage.setItem("afc_lang", lang);
+  if (confirmed) localStorage.setItem("afc_lang_confirmed", "1");
   document.documentElement.lang = lang;
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     node.textContent = t(node.dataset.i18n);
@@ -231,180 +205,206 @@ function setLanguage(next) {
   renderAll();
 }
 
+function renderShell() {
+  const header = qs(".site-header");
+  if (header) {
+    header.innerHTML = `
+      <div class="nav-shell">
+        <a class="brand" href="/"><img src="/assets/africonnect-logo.png" alt="AfriConnect GH logo"></a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="/" data-i18n="nav.welcome"></a>
+          <a href="/services.html" data-i18n="nav.services"></a>
+          <a href="/about.html" data-i18n="nav.about"></a>
+          <a href="/showcase.html" data-i18n="nav.showcase"></a>
+          <a href="/gallery.html" data-i18n="nav.gallery"></a>
+          <a href="/contact.html" data-i18n="nav.contact"></a>
+        </nav>
+        <div class="nav-actions">
+          <div class="lang-switch"><button type="button" data-lang="en">EN</button><button type="button" data-lang="fr">FR</button></div>
+          <a class="btn primary nav-cta" href="https://wa.me/233597154822">WhatsApp</a>
+        </div>
+      </div>`;
+  }
+  const footer = qs(".site-footer");
+  if (footer) {
+    footer.innerHTML = `
+      <div><strong>AfriConnect GH</strong><p id="footerTagline"></p></div>
+      <nav aria-label="Footer navigation">
+        <a href="/services.html" data-i18n="nav.services"></a>
+        <a href="/about.html" data-i18n="nav.about"></a>
+        <a href="/showcase.html" data-i18n="nav.showcase"></a>
+        <a href="/gallery.html" data-i18n="nav.gallery"></a>
+        <a href="/contact.html" data-i18n="nav.contact"></a>
+        <a href="/admin.html" data-i18n="footer.admin"></a>
+      </nav>
+      <div class="footer-contact"><a href="tel:+233597154822">+233 597 154 822</a><a href="mailto:africonnectgh@gmail.com">africonnectgh@gmail.com</a><span>Accra, Ghana</span></div>`;
+  }
+  const floating = qs(".floating-actions");
+  if (floating) {
+    floating.innerHTML = `<button type="button" id="languageFab">${t("float.language")}</button><a href="https://wa.me/233597154822">${t("float.whatsapp")}</a>`;
+  }
+}
+
+function renderLanguageModal(force = false) {
+  const modal = qs("#languageModal");
+  if (!modal) return;
+  const shouldShow = force || !localStorage.getItem("afc_lang_confirmed");
+  modal.classList.toggle("open", shouldShow);
+  modal.innerHTML = `
+    <div class="language-card">
+      <img src="/assets/africonnect-logo.png" alt="AfriConnect GH logo">
+      <h2>${t("modal.title")}</h2>
+      <p>${t("modal.copy")}</p>
+      <div><button type="button" data-pick-lang="en">${t("modal.en")}</button><button type="button" data-pick-lang="fr">${t("modal.fr")}</button></div>
+    </div>`;
+}
+
 function renderHeroGallery() {
-  const heroMedia = document.querySelector("#heroGallery");
-  if (!heroMedia) return;
+  const hero = qs("#heroGallery");
+  if (!hero) return;
   const active = heroSlides[heroSlide];
   const extras = heroSlides.filter((_, index) => index !== heroSlide).slice(0, 3);
-  heroMedia.innerHTML = `
-    <article class="hero-slide active">
-      <img src="${active.image}" alt="${active.place}" loading="eager">
-      <div>
-        <span>${active.region}</span>
-        <strong>${active.place}</strong>
-        <p>${active[lang]}</p>
-      </div>
-    </article>
-    <div class="hero-mini-stack">
-      ${extras.map((slide) => `
-        <article>
-          <img src="${slide.image}" alt="${slide.place}" loading="lazy">
-          <strong>${slide.place}</strong>
-        </article>
-      `).join("")}
-    </div>
-    <div class="hero-dots">
-      ${heroSlides.map((_, index) => `<button type="button" class="${index === heroSlide ? "active" : ""}" data-slide="${index}" aria-label="Show destination ${index + 1}"></button>`).join("")}
-    </div>
-  `;
+  hero.innerHTML = `
+    <article class="hero-slide active"><img src="${active.image}" alt="${active.place}"><div><span>${active.region}</span><strong>${active.place}</strong><p>${active[lang]}</p></div></article>
+    <div class="hero-mini-stack">${extras.map((slide) => `<article><img src="${slide.image}" alt="${slide.place}"><strong>${slide.place}</strong></article>`).join("")}</div>
+    <div class="hero-dots">${heroSlides.map((_, index) => `<button type="button" class="${index === heroSlide ? "active" : ""}" data-slide="${index}" aria-label="Show destination ${index + 1}"></button>`).join("")}</div>`;
 }
 
 function renderCategories() {
-  const rail = document.querySelector("#categoryRail");
+  const rail = qs("#categoryRail");
   if (!rail) return;
-  rail.innerHTML = categories.map((item) => `
-    <article class="category-card">
-      <img src="${item.image}" alt="${item[lang]}" loading="lazy">
-      <strong>${item[lang]}</strong>
-    </article>
-  `).join("");
+  rail.innerHTML = categories.map((item) => `<article class="category-card"><img src="${item.image}" alt="${item[lang]}"><strong>${item[lang]}</strong></article>`).join("");
+}
+
+function renderServices() {
+  const grid = qs("#serviceGrid");
+  if (!grid) return;
+  grid.innerHTML = services.map((service) => {
+    const [title, body] = service[lang];
+    return `<article class="service-card reveal"><span>${service.icon}</span><h3>${title}</h3><p>${body}</p></article>`;
+  }).join("");
+}
+
+function renderFilters() {
+  const bar = qs("#destinationFilters");
+  if (!bar) return;
+  bar.innerHTML = filters.map(([id, en, fr]) => `<button class="${activeFilter === id ? "active" : ""}" data-filter="${id}">${lang === "fr" ? fr : en}</button>`).join("");
+}
+
+function renderDestinations() {
+  const grid = qs("#destinationGrid");
+  if (!grid) return;
+  const shown = destinations.filter((item) => activeFilter === "all" || item.cat === activeFilter);
+  grid.innerHTML = shown.map((item) => `
+    <article class="destination-card reveal">
+      <div class="destination-art" style="background-image: linear-gradient(180deg, rgba(6, 63, 36, 0.04), rgba(6, 63, 36, 0.64)), url('${item.image}')"></div>
+      <div><p>${item.region}</p><h3>${item.place}</h3><span>${item[lang]}</span><footer><strong>${t("actions.custom")}</strong><a href="https://wa.me/233597154822">${t("actions.book")}</a></footer></div>
+    </article>`).join("");
 }
 
 function renderGallery() {
-  const grid = document.querySelector("#galleryGrid");
+  const grid = qs("#galleryGrid");
   if (!grid) return;
-  const items = content.gallery?.length ? content.gallery.map((item) => ({
-    image: item.image,
-    title: localized(item, "title"),
-    en: item.caption?.en || "",
-    fr: item.caption?.fr || item.caption?.en || ""
-  })) : galleryItems;
+  const fallback = destinations.map((item) => ({ image: item.image, title: { en: item.place, fr: item.place }, caption: { en: item.en, fr: item.fr } }));
+  const items = content.gallery?.length ? content.gallery : fallback;
   grid.innerHTML = items.map((item, index) => `
-    <article class="gallery-card ${index === 0 || index === 3 ? "wide" : ""}">
-      <img src="${item.image}" alt="${item.title}" loading="lazy">
-      <div>
-        <span>${item[lang]}</span>
-        <strong>${item.title}</strong>
-      </div>
-    </article>
-  `).join("");
+    <article class="gallery-card ${index === 0 || index === 3 ? "wide" : ""} reveal">
+      <img src="${item.image}" alt="${localized(item, "title") || item.title?.en || "Gallery image"}">
+      <div><span>${localized(item, "caption")}</span><strong>${localized(item, "title")}</strong></div>
+    </article>`).join("");
 }
 
 function renderTestimonials() {
-  const grid = document.querySelector("#testimonialGrid");
+  const grid = qs("#testimonialGrid");
   if (!grid) return;
   const items = content.testimonials || [];
   grid.innerHTML = items.length ? items.map((item) => `
-    <article class="testimonial-card">
-      <div class="stars">${"★".repeat(Number(item.rating || 5))}</div>
-      <p>${localized(item, "quote")}</p>
-      <strong>${item.name || "Client"}</strong>
-      <span>${localized(item, "role")}</span>
-    </article>
+    <article class="testimonial-card reveal"><div class="stars">${Number(item.rating || 5)}/5</div><p>${localized(item, "quote")}</p><strong>${item.name || "Client"}</strong><span>${localized(item, "role")}</span></article>
   `).join("") : `<p>${lang === "fr" ? "Aucun avis pour le moment." : "No feedback yet."}</p>`;
+}
+
+function renderOffers() {
+  const grid = qs("#offerGrid");
+  if (!grid) return;
+  grid.innerHTML = (content.offers || []).map((item) => `<article class="offer-card reveal"><span>${localized(item, "tag")}</span><h3>${localized(item, "title")}</h3><p>${localized(item, "body")}</p><strong>${item.price || ""}</strong></article>`).join("");
 }
 
 function renderSettings() {
   const money = content.settings?.moneyTransfer;
   const footer = content.settings?.footer;
-  if (money) {
-    document.querySelector("#moneyTitle").textContent = localized(money, "title") || t("money.title");
-    document.querySelector("#moneyBody").textContent = localized(money, "body") || t("money.copy");
-  }
-  if (footer) {
-    document.querySelector("#footerTagline").textContent = localized(footer, "tagline") || document.querySelector("#footerTagline").textContent;
-  }
-}
-
-function renderServices() {
-  document.querySelector("#serviceGrid").innerHTML = services.map((service) => {
-    const [title, body] = service[lang];
-    return `<article class="service-card"><span>${service.icon}</span><h3>${title}</h3><p>${body}</p></article>`;
-  }).join("");
-}
-
-function renderFilters() {
-  document.querySelector("#destinationFilters").innerHTML = filters.map(([id, en, fr]) => (
-    `<button class="${activeFilter === id ? "active" : ""}" data-filter="${id}">${lang === "fr" ? fr : en}</button>`
-  )).join("");
-}
-
-function renderDestinations() {
-  const shown = destinations.filter((item) => activeFilter === "all" || item.cat === activeFilter);
-  document.querySelector("#destinationGrid").innerHTML = shown.map((item) => `
-    <article class="destination-card">
-      <div class="destination-art" style="background-image: linear-gradient(180deg, rgba(6, 63, 36, 0.04), rgba(6, 63, 36, 0.64)), url('${item.image}')"></div>
-      <div>
-        <p>${item.region}</p>
-        <h3>${item.place}</h3>
-        <span>${item[lang]}</span>
-        <footer><strong>${item.price === "Custom" ? t("actions.custom") : item.price}</strong><a href="https://wa.me/233597154822">${t("actions.book")}</a></footer>
-      </div>
-    </article>
-  `).join("");
-}
-
-function renderContent() {
-  const announcements = content.announcements.slice(0, 3);
-  document.querySelector("#announcementList").innerHTML = announcements.length ? announcements.map((item) => `
-    <article>
-      <time>${item.date || ""}</time>
-      <strong>${localized(item, "title")}</strong>
-      <p>${localized(item, "body")}</p>
-    </article>
-  `).join("") : `<p>${lang === "fr" ? "Aucune annonce pour le moment." : "No announcements yet."}</p>`;
-
-  document.querySelector("#offerGrid").innerHTML = content.offers.map((item) => `
-    <article class="offer-card">
-      <span>${localized(item, "tag")}</span>
-      <h3>${localized(item, "title")}</h3>
-      <p>${localized(item, "body")}</p>
-      <strong>${item.price || ""}</strong>
-    </article>
-  `).join("");
+  const moneyTitle = qs("#moneyTitle");
+  const moneyBody = qs("#moneyBody");
+  if (moneyTitle) moneyTitle.textContent = localized(money, "title") || t("money.title");
+  if (moneyBody) moneyBody.textContent = localized(money, "body") || t("money.copy");
+  const tagline = qs("#footerTagline");
+  if (tagline) tagline.textContent = localized(footer, "tagline") || (lang === "fr" ? "Assistance bilingue pour voyage, tourisme, installation et transfert d'argent au Ghana." : "Bilingual travel, tourism, settlement and money transfer support in Ghana.");
 }
 
 function renderAll() {
+  renderShell();
+  document.querySelectorAll("[data-i18n]").forEach((node) => { node.textContent = t(node.dataset.i18n); });
+  document.querySelectorAll("[data-lang]").forEach((button) => button.classList.toggle("active", button.dataset.lang === lang));
   renderHeroGallery();
   renderCategories();
-  renderGallery();
   renderServices();
   renderFilters();
   renderDestinations();
-  renderContent();
+  renderGallery();
   renderTestimonials();
+  renderOffers();
   renderSettings();
+  revealVisible();
 }
 
 async function loadContent() {
-  const response = await fetch("/api/content");
-  content = await response.json();
+  try {
+    const response = await fetch("/api/content");
+    content = await response.json();
+  } catch {
+    content = { gallery: [], testimonials: [], offers: [], settings: {} };
+  }
   renderAll();
 }
 
-document.querySelectorAll("[data-lang]").forEach((button) => {
-  button.addEventListener("click", () => setLanguage(button.dataset.lang));
-});
+function revealVisible() {
+  const items = document.querySelectorAll(".reveal");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) entry.target.classList.add("visible");
+    });
+  }, { threshold: 0.08 });
+  items.forEach((item) => observer.observe(item));
+}
 
-document.querySelector("#destinationFilters").addEventListener("click", (event) => {
-  const button = event.target.closest("[data-filter]");
-  if (!button) return;
-  activeFilter = button.dataset.filter;
-  renderFilters();
-  renderDestinations();
-});
-
-document.querySelector("#heroGallery").addEventListener("click", (event) => {
-  const button = event.target.closest("[data-slide]");
-  if (!button) return;
-  heroSlide = Number(button.dataset.slide);
-  renderHeroGallery();
+document.addEventListener("click", (event) => {
+  const langButton = event.target.closest("[data-lang]");
+  if (langButton) setLanguage(langButton.dataset.lang);
+  const pick = event.target.closest("[data-pick-lang]");
+  if (pick) {
+    setLanguage(pick.dataset.pickLang);
+    qs("#languageModal")?.classList.remove("open");
+  }
+  const slide = event.target.closest("[data-slide]");
+  if (slide) {
+    heroSlide = Number(slide.dataset.slide);
+    renderHeroGallery();
+  }
+  if (event.target.closest("#languageFab")) renderLanguageModal(true);
+  const filter = event.target.closest("[data-filter]");
+  if (filter) {
+    activeFilter = filter.dataset.filter;
+    renderFilters();
+    renderDestinations();
+  }
 });
 
 setInterval(() => {
+  if (!qs("#heroGallery")) return;
   heroSlide = (heroSlide + 1) % heroSlides.length;
   renderHeroGallery();
 }, 5200);
 
-setLanguage(lang);
+renderShell();
+setLanguage(lang, false);
+renderLanguageModal(false);
 loadContent();

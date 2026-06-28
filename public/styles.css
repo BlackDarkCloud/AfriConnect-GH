@@ -516,7 +516,7 @@ h1 {
   color: white;
   background:
     linear-gradient(135deg, rgba(6, 63, 36, 0.96), rgba(11, 102, 57, 0.94)),
-    url("https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Independence_Arch_-_Accra%2C_Ghana.JPG/1200px-Independence_Arch_-_Accra%2C_Ghana.JPG");
+    url("/assets/tourism/independence-square.jpg");
   background-position: center;
   background-size: cover;
 }

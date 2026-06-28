@@ -66,19 +66,19 @@ const translations = {
 };
 
 const images = {
-  capeCoast: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Cape_Coast_Castle%2C_Cape_Coast%2C_Ghana.JPG/1200px-Cape_Coast_Castle%2C_Cape_Coast%2C_Ghana.JPG",
-  elmina: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Elmina_Castle_2010.jpg/1200px-Elmina_Castle_2010.jpg",
-  kakum: "https://traveljewels.net/wp-content/uploads/2024/01/IMG_9420-1024x768.jpg",
-  mole: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Elephants_in_Mole_National_Park.jpg/1200px-Elephants_in_Mole_National_Park.jpg",
-  wli: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Wli_Lower_Fall-4.jpg/900px-Wli_Lower_Fall-4.jpg",
-  nkrumah: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Kwame_nkrumah_grave_accra_ghana.jpg/900px-Kwame_nkrumah_grave_accra_ghana.jpg",
-  accra: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Independence_Arch_-_Accra%2C_Ghana.JPG/1200px-Independence_Arch_-_Accra%2C_Ghana.JPG",
-  kente: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Kente_weaving_Ghana.jpg/1200px-Kente_weaving_Ghana.jpg",
-  bosomtwe: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Lake_Bosumtwi.jpg/1200px-Lake_Bosumtwi.jpg",
-  nzulezu: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Nzulezo%2C_Ghana.jpg/1200px-Nzulezo%2C_Ghana.jpg",
-  beach: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Labadi_Beach_Accra_Ghana.jpg/1200px-Labadi_Beach_Accra_Ghana.jpg",
-  aburi: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Aburi_Botanical_Gardens.JPG/1200px-Aburi_Botanical_Gardens.JPG",
-  larabanga: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Larabanga_Mosque_Ghana.jpg/1200px-Larabanga_Mosque_Ghana.jpg"
+  capeCoast: "/assets/tourism/cape-coast-castle.jpg",
+  elmina: "/assets/tourism/elmina-castle.jpg",
+  kakum: "/assets/tourism/cape-coast-castle.jpg",
+  mole: "/assets/tourism/mole-national-park.jpg",
+  wli: "/assets/tourism/wli-waterfalls.jpg",
+  nkrumah: "/assets/tourism/kwame-nkrumah.jpg",
+  accra: "/assets/tourism/independence-square.jpg",
+  kente: "/assets/tourism/elmina-castle.jpg",
+  bosomtwe: "/assets/tourism/wli-waterfalls.jpg",
+  nzulezu: "/assets/tourism/labadi-beach.jpg",
+  beach: "/assets/tourism/labadi-beach.jpg",
+  aburi: "/assets/tourism/larabanga-mosque.jpg",
+  larabanga: "/assets/tourism/larabanga-mosque.jpg"
 };
 
 const services = [

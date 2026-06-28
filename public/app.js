@@ -7,6 +7,7 @@ const qsa = (selector, scope = document) => Array.from(scope.querySelectorAll(se
 
 const whatsappIcon = `<svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.04 3.2A12.7 12.7 0 0 0 5.26 22.63L3.6 28.8l6.31-1.61A12.72 12.72 0 1 0 16.04 3.2Zm0 2.29a10.43 10.43 0 1 1-.01 20.86c-1.82 0-3.6-.47-5.17-1.37l-.37-.21-3.75.96 1-3.66-.24-.38a10.42 10.42 0 0 1 8.54-16.2Zm-4.47 5.54c-.23 0-.6.09-.91.43-.31.34-1.2 1.18-1.2 2.87 0 1.69 1.23 3.33 1.4 3.56.17.23 2.38 3.8 5.86 5.17 2.9 1.14 3.49.91 4.12.85.63-.06 2.03-.83 2.32-1.64.29-.8.29-1.49.2-1.64-.09-.14-.31-.23-.66-.4-.34-.17-2.03-1-2.35-1.12-.31-.11-.54-.17-.77.17-.23.34-.89 1.12-1.09 1.35-.2.23-.4.26-.74.09-.34-.17-1.45-.53-2.77-1.69-1.02-.91-1.72-2.04-1.92-2.38-.2-.34-.02-.53.15-.7.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.23.06-.43-.03-.6-.09-.17-.77-1.86-1.06-2.55-.28-.67-.56-.58-.77-.59h-.59Z"/></svg>`;
 const arrowIcon = `<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+const ghanaFlag = `<span class="ghana-flag" aria-label="Ghana flag" role="img"><span></span></span>`;
 
 const translations = {
   en: {
@@ -89,6 +90,8 @@ const translations = {
     "metrics.languages": "Core languages",
     "metrics.countries": "West African routes",
     "metrics.sites": "Ghana experiences",
+    "ghana.based": "Ghana-based",
+    "ghana.identity": "Ghanaian travel support",
     "footer.tagline": "Bilingual travel, tours, settlement and money transfer support in Ghana.",
     "footer.company": "Company",
     "footer.services": "Services",
@@ -184,6 +187,8 @@ const translations = {
     "metrics.languages": "Langues principales",
     "metrics.countries": "Routes ouest-africaines",
     "metrics.sites": "Experiences Ghana",
+    "ghana.based": "Base au Ghana",
+    "ghana.identity": "Assistance voyage ghaneenne",
     "footer.tagline": "Soutien bilingue pour voyage, tourisme, installation et transfert d'argent au Ghana.",
     "footer.company": "Entreprise",
     "footer.services": "Services",
@@ -221,6 +226,7 @@ const slideshow = [
 ];
 
 const heroTags = [
+  { en: "Ghana-based", fr: "Base au Ghana" },
   { en: "Airport pickup", fr: "Accueil aeroport" },
   { en: "Guided tours", fr: "Visites guidees" },
   { en: "Translation", fr: "Traduction" },
@@ -324,6 +330,7 @@ function renderShell() {
       <div class="nav-shell">
         <a class="brand" href="/index.html" aria-label="AfriConnect GH home">
           <img src="/assets/africonnect-logo.png" alt="AfriConnect GH">
+          <span class="brand-country">${ghanaFlag}<span>${t("ghana.based")}</span></span>
         </a>
         <nav class="nav" aria-label="Main navigation">
           ${navLinks.map(([href, key, id]) => `<a class="${page === id ? "active" : ""}" href="${href}">${t(key)}</a>`).join("")}
@@ -345,6 +352,7 @@ function renderShell() {
       <div class="footer-inner">
         <div class="footer-brand">
           <img src="/assets/africonnect-logo.png" alt="AfriConnect GH">
+          <div class="footer-country">${ghanaFlag}<span>${t("ghana.identity")}</span></div>
           <p>${tagline}</p>
         </div>
         <div class="footer-col">
@@ -438,6 +446,7 @@ function renderHero() {
     stats.innerHTML = `
       <div class="hero-stat-card"><strong>24/7</strong><span>${t("metrics.support")}</span></div>
       <div class="hero-stat-card"><strong>4+</strong><span>${t("metrics.countries")}</span></div>
+      <div class="hero-stat-card ghana-card">${ghanaFlag}<strong>GH</strong><span>${t("ghana.identity")}</span></div>
       <a class="hero-quick-link" href="/services.html">${t("nav.services")} ${arrowIcon}</a>
       <a class="hero-quick-link" href="/contact.html">${t("contact.kicker")} ${arrowIcon}</a>`;
   }

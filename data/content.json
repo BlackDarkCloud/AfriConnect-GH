@@ -4,11 +4,11 @@
       "id": "welcome-2026",
       "title": {
         "en": "French and English travel support now available in Accra",
-        "fr": "Assistance voyage en français et anglais disponible à Accra"
+        "fr": "Assistance voyage en francais et anglais disponible a Accra"
       },
       "body": {
-        "en": "Book airport pickup, hotel support, guided tourism, school assistance, business errands, and translation before you arrive in Ghana.",
-        "fr": "Réservez l'accueil à l'aéroport, l'assistance logement, le tourisme guidé, l'accompagnement scolaire, les démarches d'affaires et la traduction avant votre arrivée au Ghana."
+        "en": "Book airport pickup, hotel support, guided tourism, school assistance, business errands, money transfer help, and translation before you arrive in Ghana.",
+        "fr": "Reservez l'accueil aeroport, l'assistance logement, le tourisme guide, l'accompagnement scolaire, l'aide au transfert d'argent et la traduction avant votre arrivee au Ghana."
       },
       "date": "2026-06-28"
     }
@@ -18,7 +18,7 @@
       "id": "airport-soft-landing",
       "title": {
         "en": "Airport soft-landing package",
-        "fr": "Pack arrivée sans stress"
+        "fr": "Pack arrivee sans stress"
       },
       "body": {
         "en": "Meet-and-greet, SIM card support, first-day city orientation, and hotel transfer.",
@@ -34,11 +34,11 @@
       "id": "ghana-discovery",
       "title": {
         "en": "Ghana discovery tour",
-        "fr": "Circuit découverte du Ghana"
+        "fr": "Circuit decouverte du Ghana"
       },
       "body": {
         "en": "Accra city tour, Cape Coast heritage trip, Kakum canopy walk, and local translation support.",
-        "fr": "Visite d'Accra, voyage historique à Cape Coast, passerelle de Kakum et interprétation locale."
+        "fr": "Visite d'Accra, voyage historique a Cape Coast, passerelle de Kakum et interpretation locale."
       },
       "price": "Custom quote",
       "tag": {
@@ -56,9 +56,71 @@
       },
       "body": {
         "en": "We help foreign visitors, students, entrepreneurs, families, and Ghanaians travelling across French-speaking West Africa.",
-        "fr": "Nous accompagnons les visiteurs, étudiants, entrepreneurs, familles et Ghanéens vers l'Afrique de l'Ouest francophone."
+        "fr": "Nous accompagnons les visiteurs, etudiants, entrepreneurs, familles et Ghaneens vers l'Afrique de l'Ouest francophone."
       },
       "image": "/assets/africonnect-flyer.png"
     }
-  ]
+  ],
+  "gallery": [
+    {
+      "id": "guest-cape-coast",
+      "title": {
+        "en": "Client heritage trip",
+        "fr": "Voyage client historique"
+      },
+      "caption": {
+        "en": "A guided visit to Cape Coast with translation and transport support.",
+        "fr": "Une visite guidee a Cape Coast avec traduction et transport."
+      },
+      "image": "/assets/tourism/cape-coast-castle.jpg"
+    },
+    {
+      "id": "guest-waterfall",
+      "title": {
+        "en": "Nature tour support",
+        "fr": "Accompagnement nature"
+      },
+      "caption": {
+        "en": "Waterfall routes arranged with local guidance and flexible timing.",
+        "fr": "Sorties cascades organisees avec guide local et horaires flexibles."
+      },
+      "image": "/assets/tourism/wli-waterfalls.jpg"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "student-support",
+      "name": "Client feedback",
+      "role": {
+        "en": "Student visitor",
+        "fr": "Etudiant visiteur"
+      },
+      "quote": {
+        "en": "AfriConnect GH made my first days in Accra easier. The language support, airport pickup and guidance saved me time.",
+        "fr": "AfriConnect GH a rendu mes premiers jours a Accra plus simples. L'aide linguistique, l'accueil aeroport et les conseils m'ont fait gagner du temps."
+      },
+      "rating": 5
+    }
+  ],
+  "settings": {
+    "moneyTransfer": {
+      "title": {
+        "en": "Money transfer assistance",
+        "fr": "Assistance transfert d'argent"
+      },
+      "body": {
+        "en": "We guide clients through reliable money transfer options, local payment steps, mobile money support and safe payment coordination during their stay.",
+        "fr": "Nous guidons les clients dans les options fiables de transfert d'argent, les paiements locaux, le mobile money et la coordination securisee pendant leur sejour."
+      }
+    },
+    "footer": {
+      "tagline": {
+        "en": "Bilingual travel, tourism, settlement and money transfer support in Ghana.",
+        "fr": "Assistance bilingue pour voyage, tourisme, installation et transfert d'argent au Ghana."
+      },
+      "facebook": "AfriConnect GH",
+      "instagram": "AfriConnect GH",
+      "whatsapp": "+233 597 154 822"
+    }
+  }
 }

@@ -31,6 +31,7 @@
             <button class="btn danger" id="logoutButton">Logout</button>
           </div>
         </header>
+        <div id="adminStatus" class="admin-status" role="status"></div>
 
         <div class="admin-grid">
           <form class="admin-card" id="announcementForm">
@@ -62,6 +63,43 @@
             <label>French text<textarea name="bodyFr" required></textarea></label>
             <label>Banner image<input name="image" type="file" accept="image/png,image/jpeg,image/webp"></label>
             <button class="btn primary" type="submit">Publish banner</button>
+          </form>
+
+          <form class="admin-card" id="galleryForm" enctype="multipart/form-data">
+            <h2>Add customer gallery image</h2>
+            <label>English title<input name="titleEn" required></label>
+            <label>French title<input name="titleFr" required></label>
+            <label>English caption<textarea name="captionEn" required></textarea></label>
+            <label>French caption<textarea name="captionFr" required></textarea></label>
+            <label>Customer image<input name="image" type="file" accept="image/png,image/jpeg,image/webp" required></label>
+            <button class="btn primary" type="submit">Publish gallery image</button>
+          </form>
+
+          <form class="admin-card" id="testimonialForm">
+            <h2>Add feedback</h2>
+            <label>Client name<input name="name" required></label>
+            <label>English role<input name="roleEn" placeholder="Tour client"></label>
+            <label>French role<input name="roleFr" placeholder="Client tourisme"></label>
+            <label>English feedback<textarea name="quoteEn" required></textarea></label>
+            <label>French feedback<textarea name="quoteFr" required></textarea></label>
+            <label>Rating<input name="rating" type="number" min="1" max="5" value="5"></label>
+            <button class="btn primary" type="submit">Publish feedback</button>
+          </form>
+
+          <form class="admin-card" id="moneyForm">
+            <h2>Money transfer section</h2>
+            <label>English title<input name="titleEn" required></label>
+            <label>French title<input name="titleFr" required></label>
+            <label>English details<textarea name="bodyEn" required></textarea></label>
+            <label>French details<textarea name="bodyFr" required></textarea></label>
+            <button class="btn primary" type="submit">Update money transfer</button>
+          </form>
+
+          <form class="admin-card" id="footerForm">
+            <h2>Footer text</h2>
+            <label>English tagline<textarea name="taglineEn" required></textarea></label>
+            <label>French tagline<textarea name="taglineFr" required></textarea></label>
+            <button class="btn primary" type="submit">Update footer</button>
           </form>
         </div>
 

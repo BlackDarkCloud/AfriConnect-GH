@@ -35,6 +35,12 @@ const translations = {
     "gallery.kicker": "Ghana in pictures",
     "gallery.title": "A premium look at places we can help you experience",
     "gallery.copy": "Browse real destination images from Ghana, from coastal heritage sites to waterfalls, safari routes, city landmarks and cultural spaces.",
+    "money.kicker": "Travel and payment support",
+    "money.title": "Money transfer assistance",
+    "money.copy": "We guide clients through reliable money transfer options, local payment steps, mobile money support and safe payment coordination during their stay.",
+    "money.cta": "Ask about transfers",
+    "feedback.kicker": "Client feedback",
+    "feedback.title": "What clients say after travelling with us",
     "actions.book": "Book now",
     "actions.custom": "Custom",
     "border.kicker": "Ghana, Cote d'Ivoire, Togo and Benin",
@@ -87,6 +93,12 @@ const translations = {
     "gallery.kicker": "Le Ghana en images",
     "gallery.title": "Un apercu premium des lieux que nous pouvons vous faire decouvrir",
     "gallery.copy": "Parcourez de vraies images de destinations au Ghana, des sites historiques cotiers aux cascades, safaris, monuments urbains et espaces culturels.",
+    "money.kicker": "Voyage et assistance paiement",
+    "money.title": "Assistance transfert d'argent",
+    "money.copy": "Nous guidons les clients dans les options fiables de transfert d'argent, les paiements locaux, le mobile money et la coordination securisee pendant leur sejour.",
+    "money.cta": "Demander les transferts",
+    "feedback.kicker": "Avis clients",
+    "feedback.title": "Ce que disent les clients apres leur voyage avec nous",
     "actions.book": "Reserver",
     "actions.custom": "Sur mesure",
     "border.kicker": "Ghana, Cote d'Ivoire, Togo et Benin",
@@ -130,6 +142,8 @@ const services = [
   { icon: "TO", en: ["Tourism and guided visits", "Custom Ghana tours with language support, transport planning and local tips."], fr: ["Tourisme et visites guidees", "Circuits personnalises avec appui linguistique, transport et conseils locaux."] },
   { icon: "V", en: ["Visa and immigration guidance", "Document preparation support, appointment planning and follow-up reminders."], fr: ["Visa et immigration", "Aide aux documents, preparation de rendez-vous et rappels de suivi."] },
   { icon: "WA", en: ["Cross-border travel support", "Help for trips to Cote d'Ivoire, Togo, Benin and other regional routes."], fr: ["Voyage transfrontalier", "Aide pour la Cote d'Ivoire, le Togo, le Benin et autres trajets regionaux."] }
+  ,
+  { icon: "MT", en: ["Money transfer assistance", "Reliable guidance for mobile money, local payments and safe transfer coordination."], fr: ["Assistance transfert d'argent", "Conseils fiables pour mobile money, paiements locaux et coordination de transferts securises."] }
 ];
 
 const heroSlides = [
@@ -259,7 +273,13 @@ function renderCategories() {
 function renderGallery() {
   const grid = document.querySelector("#galleryGrid");
   if (!grid) return;
-  grid.innerHTML = galleryItems.map((item, index) => `
+  const items = content.gallery?.length ? content.gallery.map((item) => ({
+    image: item.image,
+    title: localized(item, "title"),
+    en: item.caption?.en || "",
+    fr: item.caption?.fr || item.caption?.en || ""
+  })) : galleryItems;
+  grid.innerHTML = items.map((item, index) => `
     <article class="gallery-card ${index === 0 || index === 3 ? "wide" : ""}">
       <img src="${item.image}" alt="${item.title}" loading="lazy">
       <div>
@@ -268,6 +288,32 @@ function renderGallery() {
       </div>
     </article>
   `).join("");
+}
+
+function renderTestimonials() {
+  const grid = document.querySelector("#testimonialGrid");
+  if (!grid) return;
+  const items = content.testimonials || [];
+  grid.innerHTML = items.length ? items.map((item) => `
+    <article class="testimonial-card">
+      <div class="stars">${"★".repeat(Number(item.rating || 5))}</div>
+      <p>${localized(item, "quote")}</p>
+      <strong>${item.name || "Client"}</strong>
+      <span>${localized(item, "role")}</span>
+    </article>
+  `).join("") : `<p>${lang === "fr" ? "Aucun avis pour le moment." : "No feedback yet."}</p>`;
+}
+
+function renderSettings() {
+  const money = content.settings?.moneyTransfer;
+  const footer = content.settings?.footer;
+  if (money) {
+    document.querySelector("#moneyTitle").textContent = localized(money, "title") || t("money.title");
+    document.querySelector("#moneyBody").textContent = localized(money, "body") || t("money.copy");
+  }
+  if (footer) {
+    document.querySelector("#footerTagline").textContent = localized(footer, "tagline") || document.querySelector("#footerTagline").textContent;
+  }
 }
 
 function renderServices() {
@@ -326,12 +372,14 @@ function renderAll() {
   renderFilters();
   renderDestinations();
   renderContent();
+  renderTestimonials();
+  renderSettings();
 }
 
 async function loadContent() {
   const response = await fetch("/api/content");
   content = await response.json();
-  renderContent();
+  renderAll();
 }
 
 document.querySelectorAll("[data-lang]").forEach((button) => {

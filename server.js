@@ -227,9 +227,67 @@ async function handleApi(req, res) {
     return send(res, 200, content);
   }
 
+  if (req.method === "POST" && url.pathname === "/api/admin/gallery") {
+    const buffer = await collect(req);
+    const { fields, files } = parseMultipart(buffer, req.headers["content-type"] || "");
+    if (!files.image?.data?.length) return send(res, 400, { error: "Image is required" });
+    const ext = [".png", ".jpg", ".jpeg", ".webp"].includes(extname(files.image.filename).toLowerCase())
+      ? extname(files.image.filename).toLowerCase()
+      : ".jpg";
+    const filename = `${slug(fields.titleEn)}-${Date.now()}${ext}`;
+    await writeFile(join(uploadDir, filename), files.image.data);
+    const content = await readContent();
+    content.gallery ||= [];
+    content.gallery.unshift({
+      id: `${slug(fields.titleEn)}-${Date.now()}`,
+      title: { en: fields.titleEn || "", fr: fields.titleFr || fields.titleEn || "" },
+      caption: { en: fields.captionEn || "", fr: fields.captionFr || fields.captionEn || "" },
+      image: `/uploads/${filename}`
+    });
+    await saveContent(content);
+    return send(res, 200, content);
+  }
+
+  if (req.method === "POST" && url.pathname === "/api/admin/testimonials") {
+    const body = await readJson(req);
+    const content = await readContent();
+    content.testimonials ||= [];
+    content.testimonials.unshift({
+      id: `${slug(body.name)}-${Date.now()}`,
+      name: body.name || "Client",
+      role: { en: body.roleEn || "", fr: body.roleFr || body.roleEn || "" },
+      quote: { en: body.quoteEn || "", fr: body.quoteFr || body.quoteEn || "" },
+      rating: Math.max(1, Math.min(5, Number(body.rating || 5)))
+    });
+    await saveContent(content);
+    return send(res, 200, content);
+  }
+
+  if (req.method === "POST" && url.pathname === "/api/admin/settings") {
+    const body = await readJson(req);
+    const content = await readContent();
+    content.settings ||= {};
+    content.settings.moneyTransfer = {
+      title: { en: body.titleEn || "", fr: body.titleFr || body.titleEn || "" },
+      body: { en: body.bodyEn || "", fr: body.bodyFr || body.bodyEn || "" }
+    };
+    await saveContent(content);
+    return send(res, 200, content);
+  }
+
+  if (req.method === "POST" && url.pathname === "/api/admin/footer") {
+    const body = await readJson(req);
+    const content = await readContent();
+    content.settings ||= {};
+    content.settings.footer ||= {};
+    content.settings.footer.tagline = { en: body.taglineEn || "", fr: body.taglineFr || body.taglineEn || "" };
+    await saveContent(content);
+    return send(res, 200, content);
+  }
+
   if (req.method === "DELETE" && url.pathname.startsWith("/api/admin/")) {
     const [, , , collection, id] = url.pathname.split("/");
-    if (!["announcements", "offers", "banners"].includes(collection)) return send(res, 404, { error: "Unknown item" });
+    if (!["announcements", "offers", "banners", "gallery", "testimonials"].includes(collection)) return send(res, 404, { error: "Unknown item" });
     const content = await readContent();
     content[collection] = content[collection].filter((item) => item.id !== id);
     await saveContent(content);

@@ -729,6 +729,65 @@ h1 {
   font-size: clamp(1.15rem, 2vw, 1.75rem);
 }
 
+.money-section {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 28px;
+  align-items: center;
+  color: white;
+  background:
+    linear-gradient(135deg, rgba(6, 63, 36, 0.95), rgba(9, 78, 44, 0.92)),
+    url("/assets/tourism/independence-square.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 8px;
+}
+
+.money-section h2,
+.money-section p {
+  color: white;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.testimonial-card {
+  padding: 24px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 16px 42px rgba(6, 63, 36, 0.08);
+}
+
+.testimonial-card .stars {
+  color: var(--gold);
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+}
+
+.testimonial-card p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.testimonial-card strong,
+.testimonial-card span {
+  display: block;
+}
+
+.testimonial-card strong {
+  color: var(--green);
+}
+
+.testimonial-card span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .cross-border {
   display: grid;
   grid-template-columns: minmax(0, 0.82fr) minmax(280px, 0.5fr);
@@ -834,12 +893,38 @@ h1 {
   font-weight: 850;
 }
 
-footer {
+.site-footer {
   display: flex;
   justify-content: space-between;
+  gap: 28px;
   padding: 22px clamp(18px, 5vw, 72px);
   color: white;
   background: var(--green);
+}
+
+.site-footer > div:first-child {
+  max-width: 430px;
+}
+
+.site-footer strong {
+  font-size: 1.25rem;
+}
+
+.site-footer p {
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.6;
+}
+
+.site-footer nav,
+.footer-contact {
+  display: grid;
+  gap: 10px;
+}
+
+.site-footer a,
+.site-footer span {
+  color: rgba(255, 255, 255, 0.86);
+  font-weight: 750;
 }
 
 .admin-body {
@@ -918,6 +1003,36 @@ textarea {
   margin-bottom: 24px;
 }
 
+.admin-status {
+  display: none;
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-weight: 850;
+}
+
+.admin-status:not(:empty) {
+  display: block;
+}
+
+.admin-status.success {
+  color: #063f24;
+  background: #e8f6ee;
+  border: 1px solid #bfe5ce;
+}
+
+.admin-status.info {
+  color: #17301f;
+  background: #fff7dc;
+  border: 1px solid #ead58b;
+}
+
+.admin-status.error {
+  color: #7a1f18;
+  background: #fff0ee;
+  border: 1px solid #efbeb8;
+}
+
 .admin-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -968,7 +1083,8 @@ textarea {
   .hero,
   .live-band,
   .cross-border,
-  .contact {
+  .contact,
+  .money-section {
     grid-template-columns: 1fr;
   }
 
@@ -1004,6 +1120,7 @@ textarea {
 
   .announcement-list,
   .offer-grid,
+  .testimonial-grid,
   .admin-grid {
     grid-template-columns: 1fr;
   }
@@ -1073,7 +1190,7 @@ textarea {
   }
 
   .admin-top,
-  footer {
+  .site-footer {
     align-items: flex-start;
     flex-direction: column;
   }

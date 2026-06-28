@@ -1,6 +1,7 @@
 const loginView = document.querySelector("#loginView");
 const adminView = document.querySelector("#adminView");
 const contentList = document.querySelector("#contentList");
+const adminStatus = document.querySelector("#adminStatus");
 
 async function api(path, options = {}) {
   const response = await fetch(path, {
@@ -13,6 +14,11 @@ async function api(path, options = {}) {
   return data;
 }
 
+function notify(message, type = "success") {
+  adminStatus.textContent = message;
+  adminStatus.className = `admin-status ${type}`;
+}
+
 function showAdmin(show) {
   loginView.classList.toggle("hidden", show);
   adminView.classList.toggle("hidden", !show);
@@ -22,11 +28,33 @@ function text(item, key) {
   return item?.[key]?.en || item?.[key]?.fr || "";
 }
 
+function formJson(form) {
+  return Object.fromEntries(new FormData(form).entries());
+}
+
+function fillSettings(content) {
+  const money = content.settings?.moneyTransfer;
+  if (money) {
+    document.querySelector("#moneyForm [name='titleEn']").value = money.title?.en || "";
+    document.querySelector("#moneyForm [name='titleFr']").value = money.title?.fr || "";
+    document.querySelector("#moneyForm [name='bodyEn']").value = money.body?.en || "";
+    document.querySelector("#moneyForm [name='bodyFr']").value = money.body?.fr || "";
+  }
+  const footer = content.settings?.footer;
+  if (footer) {
+    document.querySelector("#footerForm [name='taglineEn']").value = footer.tagline?.en || "";
+    document.querySelector("#footerForm [name='taglineFr']").value = footer.tagline?.fr || "";
+  }
+}
+
 function renderContent(content) {
+  fillSettings(content);
   const groups = [
     ["announcements", "Announcements"],
     ["offers", "Offers"],
-    ["banners", "Banners"]
+    ["banners", "Banners"],
+    ["gallery", "Customer gallery"],
+    ["testimonials", "Feedback"]
   ];
   contentList.innerHTML = groups.map(([key, label]) => `
     <div class="content-group">
@@ -34,8 +62,8 @@ function renderContent(content) {
       ${(content[key] || []).map((item) => `
         <article>
           <div>
-            <strong>${text(item, "title")}</strong>
-            <p>${text(item, "body")}</p>
+            <strong>${text(item, "title") || item.name || text(item, "quote")}</strong>
+            <p>${text(item, "body") || text(item, "caption") || text(item, "quote") || item.price || ""}</p>
             ${item.image ? `<img src="${item.image}" alt="">` : ""}
           </div>
           <button class="btn danger small" data-delete="${key}" data-id="${item.id}">Delete</button>
@@ -46,17 +74,50 @@ function renderContent(content) {
 }
 
 async function loadContent() {
-  renderContent(await api("/api/content"));
+  const content = await api("/api/content");
+  renderContent(content);
+  return content;
 }
 
 async function checkSession() {
   const session = await api("/api/session");
   showAdmin(session.authenticated);
-  if (session.authenticated) await loadContent();
+  if (session.authenticated) {
+    await loadContent();
+    notify("Admin ready. If saving fails on Vercel, set GITHUB_REPO and GITHUB_TOKEN in Environment Variables.", "info");
+  }
 }
 
-function formJson(form) {
-  return Object.fromEntries(new FormData(form).entries());
+function handleJsonForm(selector, endpoint, success) {
+  document.querySelector(selector).addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    try {
+      notify("Saving...", "info");
+      await api(endpoint, { method: "POST", body: JSON.stringify(formJson(form)) });
+      if (!["#moneyForm", "#footerForm"].includes(selector)) form.reset();
+      await loadContent();
+      notify(success);
+    } catch (error) {
+      notify(error.message, "error");
+    }
+  });
+}
+
+function handleUploadForm(selector, endpoint, success) {
+  document.querySelector(selector).addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    try {
+      notify("Uploading...", "info");
+      await api(endpoint, { method: "POST", body: new FormData(form) });
+      form.reset();
+      await loadContent();
+      notify(success);
+    } catch (error) {
+      notify(error.message, "error");
+    }
+  });
 }
 
 document.querySelector("#loginForm").addEventListener("submit", async (event) => {
@@ -67,6 +128,7 @@ document.querySelector("#loginForm").addEventListener("submit", async (event) =>
     form.reset();
     showAdmin(true);
     await loadContent();
+    notify("Signed in successfully.");
   } catch (error) {
     alert(error.message);
   }
@@ -77,35 +139,25 @@ document.querySelector("#logoutButton").addEventListener("click", async () => {
   showAdmin(false);
 });
 
-document.querySelector("#announcementForm").addEventListener("submit", async (event) => {
-  event.preventDefault();
-  const form = event.currentTarget;
-  await api("/api/admin/announcements", { method: "POST", body: JSON.stringify(formJson(form)) });
-  form.reset();
-  await loadContent();
-});
-
-document.querySelector("#offerForm").addEventListener("submit", async (event) => {
-  event.preventDefault();
-  const form = event.currentTarget;
-  await api("/api/admin/offers", { method: "POST", body: JSON.stringify(formJson(form)) });
-  form.reset();
-  await loadContent();
-});
-
-document.querySelector("#bannerForm").addEventListener("submit", async (event) => {
-  event.preventDefault();
-  const form = event.currentTarget;
-  await api("/api/admin/banners", { method: "POST", body: new FormData(form) });
-  form.reset();
-  await loadContent();
-});
+handleJsonForm("#announcementForm", "/api/admin/announcements", "Announcement published.");
+handleJsonForm("#offerForm", "/api/admin/offers", "Offer published.");
+handleJsonForm("#testimonialForm", "/api/admin/testimonials", "Feedback published.");
+handleJsonForm("#moneyForm", "/api/admin/settings", "Money transfer section updated.");
+handleJsonForm("#footerForm", "/api/admin/footer", "Footer updated.");
+handleUploadForm("#bannerForm", "/api/admin/banners", "Banner published.");
+handleUploadForm("#galleryForm", "/api/admin/gallery", "Gallery image published.");
 
 contentList.addEventListener("click", async (event) => {
   const button = event.target.closest("[data-delete]");
   if (!button) return;
-  await api(`/api/admin/${button.dataset.delete}/${button.dataset.id}`, { method: "DELETE" });
-  await loadContent();
+  try {
+    notify("Deleting...", "info");
+    await api(`/api/admin/${button.dataset.delete}/${button.dataset.id}`, { method: "DELETE" });
+    await loadContent();
+    notify("Item deleted.");
+  } catch (error) {
+    notify(error.message, "error");
+  }
 });
 
-checkSession();
+checkSession().catch((error) => notify(error.message, "error"));

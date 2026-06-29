@@ -1,58 +1,27 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AfriConnect GH | About</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="/styles.css">
-  </head>
-  <body data-page="about">
-    <header class="site-header"></header>
-    <main>
-      <div class="page-header reveal">
-        <div class="page-header-inner">
-          <p class="t-eyebrow" data-i18n="about.kicker">About AfriConnect GH</p>
-          <h1 class="t-h1" data-i18n="about.title">A trusted bridge between people, language and place</h1>
-          <p data-i18n="about.copy">We are a Ghana-based bilingual support company helping visitors, students, families, entrepreneurs and travellers communicate, settle and move safely.</p>
-        </div>
-      </div>
-      <section class="section reveal">
-        <div class="about-hero-grid">
-          <img src="/assets/tourism/independence-square.jpg" alt="Independence Square, Accra">
-          <div class="about-copy">
-            <p class="t-eyebrow" data-i18n="about.story">Our story</p>
-            <h2 class="t-h2" data-i18n="about.storyTitle">Built for travellers who need trusted local support</h2>
-            <p data-i18n="about.storyOne">We help people communicate, move, pay, settle and enjoy Ghana with less stress. Our work is personal, bilingual and built around real local needs.</p>
-            <p data-i18n="about.storyTwo">Whether you're arriving at Kotoka Airport for the first time or a Ghanaian heading to Abidjan, we bridge the gap between language, culture and practical needs.</p>
-            <div class="value-list">
-              <div class="value-row"><div class="value-dot"></div><p data-i18n="about.valueOne"><strong>Bilingual expertise</strong> - French and English support across every service we offer.</p></div>
-              <div class="value-row"><div class="value-dot"></div><p data-i18n="about.valueTwo"><strong>Local knowledge</strong> - Deep roots in Ghana with networks across West Africa.</p></div>
-              <div class="value-row"><div class="value-dot"></div><p data-i18n="about.valueThree"><strong>Personal service</strong> - Every client is different. We plan around your needs.</p></div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div class="cross-band">
-        <div class="cross-inner">
-          <div>
-            <p class="t-eyebrow" data-i18n="border.kicker">Cross-border support</p>
-            <h2 class="t-h2" data-i18n="border.title">Support across English and French-speaking West Africa</h2>
-            <p data-i18n="border.copy">AfriConnect GH helps French-speaking visitors feel confident in Ghana and helps Ghanaians communicate, travel and settle smoothly in neighbouring francophone countries.</p>
-          </div>
-          <div class="country-pills">
-            <div class="country-pill">Ghana</div>
-            <div class="country-pill">Cote d'Ivoire</div>
-            <div class="country-pill">Togo</div>
-            <div class="country-pill">Benin</div>
-          </div>
-        </div>
-      </div>
-    </main>
-    <footer class="site-footer"></footer>
-    <div id="languageModal" class="language-modal" aria-modal="true" role="dialog"></div>
-    <div class="floating-actions"></div>
-    <script src="/app.js" type="module"></script>
-  </body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AfriConnect GH | About</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="/styles.css"></head>
+<body data-page="about">
+<div class="flag-stripe"><b></b><b></b><b></b></div>
+<header class="site-header" id="siteHeader"></header>
+<main>
+  <div class="page-hd reveal"><div class="page-hd-in"><p class="eyebrow" data-i18n="abt.kicker"></p><h1 class="t-h1" data-i18n="abt.title"></h1><p data-i18n="abt.sub"></p></div></div>
+  <div class="kente"></div>
+  <section class="section reveal">
+    <div class="about-grid">
+      <img class="about-img" src="/assets/tourism/independence-square.jpg" alt="Independence Square, Accra">
+      <div class="ac"><p class="eyebrow" data-i18n="abt.story.kicker"></p><h2 class="t-h2" data-i18n="abt.story.title"></h2><p data-i18n="abt.story.p1"></p><p data-i18n="abt.story.p2"></p><div class="vals" id="aboutVals"></div></div>
+    </div>
+  </section>
+  <div class="cross-band reveal">
+    <div class="cross-inner">
+      <div><p class="eyebrow" data-i18n="cross.kicker"></p><h2 class="t-h2" style="color:var(--white)" data-i18n="cross.title"></h2><p data-i18n="cross.sub"></p></div>
+      <div class="cpills" id="countryPills"></div>
+    </div>
+  </div>
+  <div class="why-band reveal"><div class="why-inner" id="whyGrid"></div></div>
+</main>
+<div class="kente"></div>
+<footer class="site-footer" id="siteFooter"></footer>
+<div class="lang-modal" id="langModal"></div>
+<div class="floating" id="floating"></div>
+<script src="/app.js" type="module"></script>
+</body></html>

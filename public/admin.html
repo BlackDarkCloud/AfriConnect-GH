@@ -1,116 +1,196 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AfriConnect GH Admin</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="/styles.css">
-  </head>
-  <body class="admin-body">
-    <main class="admin-shell">
-      <section class="admin-login" id="loginView">
-        <img src="/assets/africonnect-logo.png" alt="AfriConnect GH logo">
-        <h1>Admin panel</h1>
-        <p>Manage announcements, offers, banners and uploaded images.</p>
-        <form id="loginForm">
-          <label>Username<input name="username" autocomplete="username" required></label>
-          <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
-          <button class="btn primary" type="submit">Sign in</button>
-          <small>Default login: admin / admin123. Change it with ADMIN_USER and ADMIN_PASS before going live.</small>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AfriConnect GH | Admin Panel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="admin-page" data-page="admin">
+  <div class="flag-stripe"><b></b><b></b><b></b></div>
+
+  <!-- LOGIN -->
+  <div id="loginScreen">
+    <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;background:#f2f4f2">
+      <div class="adm-login">
+        <img src="/assets/africonnect-logo.png" alt="AfriConnect GH">
+        <h2>Admin Panel</h2>
+        <p>AfriConnect GH — Content Management</p>
+        <div class="adm-status" id="loginStatus"></div>
+        <form id="loginForm" class="adm-form">
+          <label>Username<input type="text" id="loginUser" placeholder="admin" autocomplete="username"></label>
+          <label>Password<input type="password" id="loginPass" placeholder="••••••••" autocomplete="current-password"></label>
+          <button class="btn green" type="submit">Sign in →</button>
         </form>
-      </section>
+        <p style="margin-top:14px;color:var(--muted);font-size:.78rem">Default: admin / africonnect2024</p>
+      </div>
+    </div>
+  </div>
 
-      <section class="admin-app hidden" id="adminView">
-        <header class="admin-top">
-          <div>
-            <p class="section-kicker">AfriConnect GH</p>
-            <h1>Content dashboard</h1>
+  <!-- DASHBOARD -->
+  <div id="dashboard" class="hidden">
+    <header class="adm-header">
+      <img src="/assets/africonnect-logo.png" alt="AfriConnect GH">
+      <h1>Admin Panel</h1>
+      <div class="spacer"></div>
+      <span style="color:rgba(255,255,255,.6);font-size:.82rem" id="adminUser"></span>
+      <button class="btn outline-w sm" id="logoutBtn">Logout</button>
+    </header>
+
+    <div class="adm-shell">
+      <!-- Stats row -->
+      <div class="adm-grid" style="grid-template-columns:repeat(4,1fr)">
+        <div class="adm-card"><div class="adm-stat" id="statGallery">0</div><div class="adm-stat-lbl">Gallery Photos</div></div>
+        <div class="adm-card"><div class="adm-stat" id="statOffers">0</div><div class="adm-stat-lbl">Active Offers</div></div>
+        <div class="adm-card"><div class="adm-stat" id="statReviews">0</div><div class="adm-stat-lbl">Testimonials</div></div>
+        <div class="adm-card"><div class="adm-stat" id="statMsgs">0</div><div class="adm-stat-lbl">Messages</div></div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="adm-tabs">
+        <button class="adm-tab on" data-tab="gallery">📸 Gallery</button>
+        <button class="adm-tab" data-tab="offers">🎁 Offers</button>
+        <button class="adm-tab" data-tab="reviews">⭐ Reviews</button>
+        <button class="adm-tab" data-tab="settings">⚙️ Settings</button>
+        <button class="adm-tab" data-tab="messages">💬 Messages</button>
+      </div>
+
+      <!-- GALLERY PANEL -->
+      <div class="adm-panel on" id="panel-gallery">
+        <div class="adm-grid">
+          <div class="adm-card" style="grid-column:1/3">
+            <h3>Add Gallery Photo</h3>
+            <div class="adm-status" id="gal-status"></div>
+            <form class="adm-form" id="galForm">
+              <div class="row">
+                <label>Title (English)<input type="text" name="title_en" placeholder="e.g. Accra City Centre" required></label>
+                <label>Title (French)<input type="text" name="title_fr" placeholder="e.g. Centre-ville d'Accra"></label>
+              </div>
+              <div class="row">
+                <label>Category<select name="category"><option value="city">City</option><option value="nature">Nature</option><option value="heritage">Heritage</option><option value="beach">Beach</option><option value="clients">Clients</option></select></label>
+                <label>Caption / Location<input type="text" name="caption" placeholder="e.g. Greater Accra, Ghana"></label>
+              </div>
+              <label>Image URL<input type="url" name="image" placeholder="https://..." required></label>
+              <label>Wide card (spans 2 columns)
+                <select name="wide"><option value="false">No</option><option value="true">Yes</option></select>
+              </label>
+              <button class="btn green" type="submit">Add Photo</button>
+            </form>
           </div>
-          <div class="admin-actions">
-            <a class="btn secondary" href="/">View website</a>
-            <button class="btn danger" id="logoutButton">Logout</button>
+          <div class="adm-card">
+            <h3>Current Gallery</h3>
+            <div class="adm-items" id="galItems"></div>
           </div>
-        </header>
-        <div id="adminStatus" class="admin-status" role="status"></div>
-
-        <div class="admin-grid">
-          <form class="admin-card" id="announcementForm">
-            <h2>Post announcement</h2>
-            <label>English title<input name="titleEn" required></label>
-            <label>French title<input name="titleFr" required></label>
-            <label>English message<textarea name="bodyEn" required></textarea></label>
-            <label>French message<textarea name="bodyFr" required></textarea></label>
-            <button class="btn primary" type="submit">Publish announcement</button>
-          </form>
-
-          <form class="admin-card" id="offerForm">
-            <h2>Post offer</h2>
-            <label>English title<input name="titleEn" required></label>
-            <label>French title<input name="titleFr" required></label>
-            <label>English details<textarea name="bodyEn" required></textarea></label>
-            <label>French details<textarea name="bodyFr" required></textarea></label>
-            <label>Price or note<input name="price" placeholder="From GHS 450"></label>
-            <label>English tag<input name="tagEn" placeholder="Popular"></label>
-            <label>French tag<input name="tagFr" placeholder="Populaire"></label>
-            <button class="btn primary" type="submit">Publish offer</button>
-          </form>
-
-          <form class="admin-card" id="bannerForm" enctype="multipart/form-data">
-            <h2>Upload banner</h2>
-            <label>English title<input name="titleEn" required></label>
-            <label>French title<input name="titleFr" required></label>
-            <label>English text<textarea name="bodyEn" required></textarea></label>
-            <label>French text<textarea name="bodyFr" required></textarea></label>
-            <label>Banner image<input name="image" type="file" accept="image/png,image/jpeg,image/webp"></label>
-            <button class="btn primary" type="submit">Publish banner</button>
-          </form>
-
-          <form class="admin-card" id="galleryForm" enctype="multipart/form-data">
-            <h2>Add customer gallery image</h2>
-            <label>English title<input name="titleEn" required></label>
-            <label>French title<input name="titleFr" required></label>
-            <label>English caption<textarea name="captionEn" required></textarea></label>
-            <label>French caption<textarea name="captionFr" required></textarea></label>
-            <label>Customer image<input name="image" type="file" accept="image/png,image/jpeg,image/webp" required></label>
-            <button class="btn primary" type="submit">Publish gallery image</button>
-          </form>
-
-          <form class="admin-card" id="testimonialForm">
-            <h2>Add feedback</h2>
-            <label>Client name<input name="name" required></label>
-            <label>English role<input name="roleEn" placeholder="Tour client"></label>
-            <label>French role<input name="roleFr" placeholder="Client tourisme"></label>
-            <label>English feedback<textarea name="quoteEn" required></textarea></label>
-            <label>French feedback<textarea name="quoteFr" required></textarea></label>
-            <label>Rating<input name="rating" type="number" min="1" max="5" value="5"></label>
-            <button class="btn primary" type="submit">Publish feedback</button>
-          </form>
-
-          <form class="admin-card" id="moneyForm">
-            <h2>Money transfer section</h2>
-            <label>English title<input name="titleEn" required></label>
-            <label>French title<input name="titleFr" required></label>
-            <label>English details<textarea name="bodyEn" required></textarea></label>
-            <label>French details<textarea name="bodyFr" required></textarea></label>
-            <button class="btn primary" type="submit">Update money transfer</button>
-          </form>
-
-          <form class="admin-card" id="footerForm">
-            <h2>Footer text</h2>
-            <label>English tagline<textarea name="taglineEn" required></textarea></label>
-            <label>French tagline<textarea name="taglineFr" required></textarea></label>
-            <button class="btn primary" type="submit">Update footer</button>
-          </form>
         </div>
+      </div>
 
-        <section class="admin-card">
-          <h2>Current content</h2>
-          <div id="contentList" class="content-list"></div>
-        </section>
-      </section>
-    </main>
-    <script src="/admin.js" type="module"></script>
-  </body>
+      <!-- OFFERS PANEL -->
+      <div class="adm-panel" id="panel-offers">
+        <div class="adm-grid">
+          <div class="adm-card" style="grid-column:1/3">
+            <h3>Add Travel Offer / Package</h3>
+            <div class="adm-status" id="offer-status"></div>
+            <form class="adm-form" id="offerForm">
+              <div class="row">
+                <label>Title (English)<input type="text" name="title_en" placeholder="e.g. 3-Day Cape Coast Heritage Tour" required></label>
+                <label>Title (French)<input type="text" name="title_fr" placeholder="e.g. Circuit patrimoine Cape Coast 3 jours"></label>
+              </div>
+              <label>Description (English)<textarea name="body_en" placeholder="What's included, highlights, who it's for…" required></textarea></label>
+              <label>Description (French)<textarea name="body_fr" placeholder="Ce qui est inclus, points forts…"></textarea></label>
+              <div class="row">
+                <label>Price / Rate<input type="text" name="price" placeholder="e.g. From GH₵ 450 per person"></label>
+                <label>Duration<input type="text" name="duration" placeholder="e.g. 3 days"></label>
+              </div>
+              <label>Image URL (optional)<input type="url" name="image" placeholder="https://..."></label>
+              <button class="btn green" type="submit">Add Offer</button>
+            </form>
+          </div>
+          <div class="adm-card">
+            <h3>Current Offers</h3>
+            <div class="adm-items" id="offerItems"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REVIEWS PANEL -->
+      <div class="adm-panel" id="panel-reviews">
+        <div class="adm-grid">
+          <div class="adm-card" style="grid-column:1/3">
+            <h3>Add Testimonial</h3>
+            <div class="adm-status" id="rev-status"></div>
+            <form class="adm-form" id="revForm">
+              <div class="row">
+                <label>Client Name<input type="text" name="name" placeholder="Jean-Pierre M." required></label>
+                <label>Rating (stars)<select name="stars"><option value="5">★★★★★ (5)</option><option value="4">★★★★ (4)</option><option value="3">★★★ (3)</option></select></label>
+              </div>
+              <div class="row">
+                <label>Role / Origin (EN)<input type="text" name="role_en" placeholder="Business traveller, Abidjan"></label>
+                <label>Role / Origin (FR)<input type="text" name="role_fr" placeholder="Voyageur d'affaires, Abidjan"></label>
+              </div>
+              <label>Review (English)<textarea name="quote_en" placeholder="Share their experience in English…" required></textarea></label>
+              <label>Review (French)<textarea name="quote_fr" placeholder="Partagez leur expérience en français…"></textarea></label>
+              <button class="btn green" type="submit">Add Testimonial</button>
+            </form>
+          </div>
+          <div class="adm-card">
+            <h3>Current Testimonials</h3>
+            <div class="adm-items" id="revItems"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SETTINGS PANEL -->
+      <div class="adm-panel" id="panel-settings">
+        <div class="adm-grid">
+          <div class="adm-card">
+            <h3>Site Settings</h3>
+            <div class="adm-status" id="set-status"></div>
+            <form class="adm-form" id="setForm">
+              <label>WhatsApp Number<input type="text" name="whatsapp" id="setWA" placeholder="233591754822"></label>
+              <label>Phone (display)<input type="text" name="phone" id="setPhone" placeholder="+233 591 754 822"></label>
+              <label>Email<input type="text" name="email" id="setEmail" placeholder="info@africonnectgh.com"></label>
+              <label>Website<input type="text" name="website" id="setWeb" placeholder="www.africonnectgh.com"></label>
+              <button class="btn green" type="submit">Save Settings</button>
+            </form>
+          </div>
+          <div class="adm-card">
+            <h3>Money Transfer Section</h3>
+            <div class="adm-status" id="money-status"></div>
+            <form class="adm-form" id="moneyForm">
+              <label>Title (EN)<input type="text" name="title_en" id="mTitleEn" placeholder="Money Transfer Assistance"></label>
+              <label>Title (FR)<input type="text" name="title_fr" id="mTitleFr" placeholder="Transfert d'argent"></label>
+              <label>Body (EN)<textarea name="body_en" id="mBodyEn" placeholder="Description in English…"></textarea></label>
+              <label>Body (FR)<textarea name="body_fr" id="mBodyFr" placeholder="Description en français…"></textarea></label>
+              <button class="btn green" type="submit">Save</button>
+            </form>
+          </div>
+          <div class="adm-card">
+            <h3>Change Password</h3>
+            <div class="adm-status" id="pw-status"></div>
+            <form class="adm-form" id="pwForm">
+              <label>Current Password<input type="password" id="pwCurrent"></label>
+              <label>New Password<input type="password" id="pwNew"></label>
+              <label>Confirm New<input type="password" id="pwConfirm"></label>
+              <button class="btn red" type="submit">Update Password</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- MESSAGES PANEL -->
+      <div class="adm-panel" id="panel-messages">
+        <div class="adm-card">
+          <h3>Contact Messages</h3>
+          <p style="color:var(--muted);font-size:.88rem;margin-bottom:16px">Messages submitted via the contact form appear here.</p>
+          <div class="adm-status" id="msg-info" style="background:var(--cream);color:var(--muted);border:1px solid var(--line)">Messages sent via the contact form are routed directly to WhatsApp. This panel shows a log of form submissions stored locally in your browser.</div>
+          <div class="adm-items" id="msgItems" style="margin-top:16px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/admin.js"></script>
+</body>
 </html>
